@@ -1,0 +1,48 @@
+#! /bin/sh
+
+bspc monitor -d I II III IV V VI VII
+bspc config remove_disabled_monitors	true
+bspc config remove_unplugged_monitors	true
+
+bspc config border_width         2
+bspc config window_gap          12
+bspc config top_monocle_padding          10
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config single_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a KeePassXC state=floating follow=on rectangle=1350x690+5+65 sticky=false
+bspc rule -a Todoist state=floating follow=on rectangle=1350x690+5+65 sticky=true
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+# bspwm directory
+bspwm_dir=/home/"$(whoami)"/.config/bspwm/
+sh -c "$bspwm_dir"/scripts/autostart.sh &
+
+if [ "$1" != 0 ];then
+    # programs to only run on restarts
+    dunstify -t 1500 "bspwm restarted"
+else
+    # programs to run at start only
+    sh -c "$bspwm_dir"/scripts/settings.sh &
+
+    # set the wallpaper
+    feh --bg-scale ~/Downloads/wp11912493-catppuccin-wallpapers.png
+
+    # daemonize this entire process
+    {
+        checkupdates && {
+            action="$(dunstify -u 1 -A updateAction,update "updates available")"
+            if [ "$action" = "updateAction" ];then
+                kitty --hold paru
+            fi
+        }
+    } &
+fi
+

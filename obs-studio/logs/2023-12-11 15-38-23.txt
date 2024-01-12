@@ -1,0 +1,226 @@
+15:38:23.508: Platform: Wayland
+15:38:23.509: CPU Name: Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz
+15:38:23.509: CPU Speed: 1002.977MHz
+15:38:23.509: Physical Cores: 2, Logical Cores: 4
+15:38:23.509: Physical Memory: 11857MB Total, 1881MB Free
+15:38:23.509: Kernel Version: Linux 6.1.66-1-MANJARO
+15:38:23.509: Distribution: "Manjaro Linux" Unknown
+15:38:23.509: Desktop Environment: Hyprland
+15:38:23.509: Session Type: wayland
+15:38:23.514: Qt Version: 6.6.1 (runtime), 6.6.0 (compiled)
+15:38:23.514: Portable mode: false
+15:38:23.845: OBS 30.0.0-1 (linux)
+15:38:23.845: ---------------------------------
+15:38:23.870: ---------------------------------
+15:38:23.870: audio settings reset:
+15:38:23.870: 	samples per sec: 48000
+15:38:23.870: 	speakers:        2
+15:38:23.870: 	max buffering:   960 milliseconds
+15:38:23.870: 	buffering type:  dynamically increasing
+15:38:23.897: ---------------------------------
+15:38:23.898: Initializing OpenGL...
+15:38:23.898: Using EGL/Wayland
+15:38:23.971: Initialized EGL 1.5
+15:38:23.995: Loading up OpenGL on adapter Intel Mesa Intel(R) HD Graphics 520 (SKL GT2)
+15:38:23.995: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 23.1.9-manjaro1.1, shading language 4.60
+15:38:24.205: ---------------------------------
+15:38:24.205: video settings reset:
+15:38:24.205: 	base resolution:   1366x768
+15:38:24.205: 	output resolution: 1092x614
+15:38:24.205: 	downscale filter:  Bicubic
+15:38:24.205: 	fps:               30/1
+15:38:24.205: 	format:            NV12
+15:38:24.205: 	YUV mode:          Rec. 709/Partial
+15:38:24.205: NV12 texture support not available
+15:38:24.205: P010 texture support not available
+15:38:24.213: Audio monitoring device:
+15:38:24.213: 	name: Default
+15:38:24.213: 	id: default
+15:38:24.214: ---------------------------------
+15:38:24.370: Failed to load 'en-US' text for module: 'decklink-captions.so'
+15:38:24.465: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+15:38:24.502: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+15:38:24.502: Failed to initialize module 'decklink.so'
+15:38:25.122: [pipewire] Available captures:
+15:38:25.122: [pipewire]     - Desktop capture
+15:38:25.122: [pipewire]     - Window capture
+15:38:25.203: v4l2loopback not installed, virtual camera disabled
+15:38:25.959: VAAPI: Failed to initialize display in vaapi_device_h264_supported
+15:38:25.959: FFmpeg VAAPI H264 encoding not supported
+15:38:25.959: VAAPI: Failed to initialize display in vaapi_device_hevc_supported
+15:38:25.959: FFmpeg VAAPI HEVC encoding not supported
+15:38:26.454: ---------------------------------
+15:38:26.454:   Loaded Modules:
+15:38:26.454:     text-freetype2.so
+15:38:26.454:     rtmp-services.so
+15:38:26.454:     obs-x264.so
+15:38:26.454:     obs-vst.so
+15:38:26.454:     obs-transitions.so
+15:38:26.454:     obs-qsv11.so
+15:38:26.454:     obs-outputs.so
+15:38:26.454:     obs-libfdk.so
+15:38:26.454:     obs-filters.so
+15:38:26.454:     obs-ffmpeg.so
+15:38:26.454:     linux-v4l2.so
+15:38:26.455:     linux-pulseaudio.so
+15:38:26.455:     linux-pipewire.so
+15:38:26.455:     linux-jack.so
+15:38:26.455:     linux-capture.so
+15:38:26.455:     linux-alsa.so
+15:38:26.455:     image-source.so
+15:38:26.455:     frontend-tools.so
+15:38:26.455:     decklink-output-ui.so
+15:38:26.455:     decklink-captions.so
+15:38:26.455: ---------------------------------
+15:38:26.473: ==== Startup complete ===============================================
+15:38:26.526: No scene file found, creating default scene
+15:38:26.603: All scene data cleared
+15:38:26.603: ------------------------------------------------
+15:38:26.661: pulse-input: Server name: 'PulseAudio (on PipeWire 1.0.0) 15.0.0'
+15:38:26.661: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+15:38:26.661: pulse-input: Started recording from 'alsa_output.pci-0000_00_1f.3.analog-stereo.monitor' (default)
+15:38:26.662: pulse-input: Server name: 'PulseAudio (on PipeWire 1.0.0) 15.0.0'
+15:38:26.662: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+15:38:26.662: pulse-input: Started recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo' (default)
+15:38:26.664: Switched to scene 'Scene'
+15:38:26.664: Failed to glob scene collections
+15:38:26.832: [rtmp-services plugin] Successfully updated file 'services.json' (version 238)
+15:38:26.832: [rtmp-services plugin] Successfully updated package (version 238)
+15:38:27.349: adding 42 milliseconds of audio buffering, total audio buffering is now 42 milliseconds (source: Desktop Audio)
+15:38:27.349: 
+15:38:37.496: 
+15:38:37.496: ==== Auto-config wizard testing commencing ======
+
+15:38:37.513: Number of remaining views: 1
+15:38:37.513: ---------------------------------
+15:38:37.514: video settings reset:
+15:38:37.514: 	base resolution:   1366x768
+15:38:37.514: 	output resolution: 852x480
+15:38:37.514: 	downscale filter:  Bicubic
+15:38:37.514: 	fps:               30/1
+15:38:37.514: 	format:            NV12
+15:38:37.514: 	YUV mode:          Rec. 709/Partial
+15:38:37.514: NV12 texture support not available
+15:38:37.514: P010 texture support not available
+15:38:37.529: Output 'null': Tried to use obs_output_set_media on an encoded output
+15:38:37.530: ---------------------------------
+15:38:37.530: [x264 encoder: 'test_x264'] preset: veryfast
+15:38:37.530: [x264 encoder: 'test_x264'] profile: high
+15:38:37.578: [x264 encoder: 'test_x264'] settings:
+15:38:37.578: 	rate_control: CRF
+15:38:37.578: 	bitrate:      0
+15:38:37.578: 	buffer size:  0
+15:38:37.578: 	crf:          20
+15:38:37.578: 	fps_num:      30
+15:38:37.578: 	fps_den:      1
+15:38:37.578: 	width:        852
+15:38:37.578: 	height:       480
+15:38:37.578: 	keyint:       250
+15:38:37.578: 
+15:38:37.611: ---------------------------------
+15:38:37.613: [FFmpeg aac encoder: 'test_aac'] bitrate: 32, channels: 2, channel_layout: stereo
+15:38:37.613: 
+15:38:42.616: Output 'null': stopping
+15:38:42.617: Output 'null': Total frames output: 129
+15:38:42.617: Output 'null': Total drawn frames: 149 (150 attempted)
+15:38:42.617: Output 'null': Number of lagged frames due to rendering lag/stalls: 1 (0.7%)
+15:38:42.663: Number of remaining views: 1
+15:38:42.663: ---------------------------------
+15:38:42.663: video settings reset:
+15:38:42.663: 	base resolution:   1366x768
+15:38:42.663: 	output resolution: 640x360
+15:38:42.663: 	downscale filter:  Bicubic
+15:38:42.663: 	fps:               60/1
+15:38:42.663: 	format:            NV12
+15:38:42.663: 	YUV mode:          Rec. 709/Partial
+15:38:42.663: NV12 texture support not available
+15:38:42.663: P010 texture support not available
+15:38:42.667: Output 'null': Tried to use obs_output_set_media on an encoded output
+15:38:42.667: ---------------------------------
+15:38:42.667: [x264 encoder: 'test_x264'] preset: veryfast
+15:38:42.667: [x264 encoder: 'test_x264'] profile: high
+15:38:42.667: [x264 encoder: 'test_x264'] settings:
+15:38:42.667: 	rate_control: CRF
+15:38:42.667: 	bitrate:      0
+15:38:42.667: 	buffer size:  0
+15:38:42.667: 	crf:          20
+15:38:42.667: 	fps_num:      60
+15:38:42.667: 	fps_den:      1
+15:38:42.667: 	width:        640
+15:38:42.667: 	height:       360
+15:38:42.667: 	keyint:       250
+15:38:42.667: 
+15:38:42.670: ---------------------------------
+15:38:42.670: [FFmpeg aac encoder: 'test_aac'] bitrate: 32, channels: 2, channel_layout: stereo
+15:38:42.670: 
+15:38:47.671: Output 'null': stopping
+15:38:47.671: Output 'null': Total frames output: 279
+15:38:47.671: Output 'null': Total drawn frames: 300
+15:38:47.700: Number of remaining views: 1
+15:38:47.700: ---------------------------------
+15:38:47.700: video settings reset:
+15:38:47.700: 	base resolution:   1366x768
+15:38:47.700: 	output resolution: 640x360
+15:38:47.700: 	downscale filter:  Bicubic
+15:38:47.700: 	fps:               30/1
+15:38:47.700: 	format:            NV12
+15:38:47.700: 	YUV mode:          Rec. 709/Partial
+15:38:47.700: NV12 texture support not available
+15:38:47.700: P010 texture support not available
+15:38:47.704: Output 'null': Tried to use obs_output_set_media on an encoded output
+15:38:47.704: ---------------------------------
+15:38:47.704: [x264 encoder: 'test_x264'] preset: veryfast
+15:38:47.704: [x264 encoder: 'test_x264'] profile: high
+15:38:47.704: [x264 encoder: 'test_x264'] settings:
+15:38:47.704: 	rate_control: CRF
+15:38:47.704: 	bitrate:      0
+15:38:47.704: 	buffer size:  0
+15:38:47.704: 	crf:          20
+15:38:47.704: 	fps_num:      30
+15:38:47.704: 	fps_den:      1
+15:38:47.704: 	width:        640
+15:38:47.704: 	height:       360
+15:38:47.704: 	keyint:       250
+15:38:47.704: 
+15:38:47.706: ---------------------------------
+15:38:47.706: [FFmpeg aac encoder: 'test_aac'] bitrate: 32, channels: 2, channel_layout: stereo
+15:38:47.706: 
+15:38:52.706: Output 'null': stopping
+15:38:52.707: Output 'null': Total frames output: 129
+15:38:52.707: Output 'null': Total drawn frames: 150
+15:38:52.737: Number of remaining views: 1
+15:38:52.738: ---------------------------------
+15:38:52.738: video settings reset:
+15:38:52.738: 	base resolution:   1366x768
+15:38:52.738: 	output resolution: 1092x614
+15:38:52.738: 	downscale filter:  Bicubic
+15:38:52.738: 	fps:               30/1
+15:38:52.738: 	format:            NV12
+15:38:52.738: 	YUV mode:          Rec. 709/Partial
+15:38:52.738: NV12 texture support not available
+15:38:52.738: P010 texture support not available
+15:38:58.414: Number of remaining views: 1
+15:38:58.414: ---------------------------------
+15:38:58.414: video settings reset:
+15:38:58.414: 	base resolution:   1366x768
+15:38:58.414: 	output resolution: 852x480
+15:38:58.414: 	downscale filter:  Bicubic
+15:38:58.414: 	fps:               30/1
+15:38:58.414: 	format:            NV12
+15:38:58.414: 	YUV mode:          Rec. 709/Partial
+15:38:58.415: NV12 texture support not available
+15:38:58.415: P010 texture support not available
+15:38:58.445: 
+15:38:58.445: ==== Auto-config wizard testing stopping ========
+
+15:39:46.423:   OpenType support missing for "Open Sans", script 11
+15:39:46.424:   OpenType support missing for "Open Sans", script 12
+15:39:46.425:   OpenType support missing for "Open Sans", script 16
+15:39:46.428:   OpenType support missing for "Open Sans", script 20
+15:39:53.692: Settings changed (hotkeys)
+15:39:53.692: ------------------------------------------------
+15:39:59.782: Starting stream due to hotkey
+15:39:59.792: Stream output type 'rtmp_output' failed to start!
+15:40:53.105: Starting stream due to hotkey
+15:40:53.111: Stream output type 'rtmp_output' failed to start!
+15:47:23.657: The Wayland connection broke during blocking read event. Did the Wayland compositor die?

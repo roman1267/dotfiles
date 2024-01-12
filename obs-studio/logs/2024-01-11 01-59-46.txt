@@ -1,0 +1,96 @@
+01:59:46.672: Using EGL/X11
+01:59:46.672: CPU Name: Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz
+01:59:46.672: CPU Speed: 2572.355MHz
+01:59:46.672: Physical Cores: 2, Logical Cores: 4
+01:59:46.672: Physical Memory: 11857MB Total, 6635MB Free
+01:59:46.672: Kernel Version: Linux 6.1.69-1-MANJARO
+01:59:46.672: Distribution: "Manjaro Linux" Unknown
+01:59:46.672: Desktop Environment: bspwm
+01:59:46.672: Session Type: X11
+01:59:46.672: Window System: X11.0, Vendor: The X.Org Foundation, Version: 1.21.1
+01:59:46.674: Qt Version: 6.6.1 (runtime), 6.6.1 (compiled)
+01:59:46.674: Portable mode: false
+01:59:46.752: OBS 30.0.2-1 (linux)
+01:59:46.752: ---------------------------------
+01:59:46.761: ---------------------------------
+01:59:46.761: audio settings reset:
+01:59:46.761: 	samples per sec: 48000
+01:59:46.761: 	speakers:        2
+01:59:46.761: 	max buffering:   960 milliseconds
+01:59:46.761: 	buffering type:  dynamically increasing
+01:59:46.765: ---------------------------------
+01:59:46.765: Initializing OpenGL...
+01:59:46.838: Loading up OpenGL on adapter Intel Mesa Intel(R) HD Graphics 520 (SKL GT2)
+01:59:46.839: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 23.1.9-manjaro1.1, shading language 4.60
+01:59:46.891: ---------------------------------
+01:59:46.891: video settings reset:
+01:59:46.891: 	base resolution:   1366x768
+01:59:46.891: 	output resolution: 852x480
+01:59:46.891: 	downscale filter:  Bicubic
+01:59:46.891: 	fps:               30/1
+01:59:46.891: 	format:            NV12
+01:59:46.891: 	YUV mode:          Rec. 709/Partial
+01:59:46.892: NV12 texture support not available
+01:59:46.892: P010 texture support not available
+01:59:46.898: Audio monitoring device:
+01:59:46.898: 	name: Default
+01:59:46.898: 	id: default
+01:59:46.898: ---------------------------------
+01:59:46.908: Failed to load 'en-US' text for module: 'decklink-captions.so'
+01:59:46.919: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+01:59:46.931: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+01:59:46.931: Failed to initialize module 'decklink.so'
+02:00:12.157: [portals] Error retrieving D-Bus proxy: Error calling StartServiceByName for org.freedesktop.portal.Desktop: Timeout was reached
+02:00:12.157: [pipewire] No captures available
+02:00:12.212: v4l2loopback not installed, virtual camera disabled
+02:00:12.318: VAAPI: Failed to initialize display in vaapi_device_h264_supported
+02:00:12.318: FFmpeg VAAPI H264 encoding not supported
+02:00:12.318: VAAPI: Failed to initialize display in vaapi_device_hevc_supported
+02:00:12.318: FFmpeg VAAPI HEVC encoding not supported
+02:00:12.336: os_dlopen(/usr//lib/obs-plugins/obs-libfdk.so->/usr//lib/obs-plugins/obs-libfdk.so): libfdk-aac.so.2: cannot open shared object file: No such file or directory
+02:00:12.336: 
+02:00:12.340: os_dlopen(/usr//lib/obs-plugins/obs-libfdk.so->/usr//lib/obs-plugins/obs-libfdk.so): libfdk-aac.so.2: cannot open shared object file: No such file or directory
+02:00:12.340: 
+02:00:12.340: Module '/usr//lib/obs-plugins/obs-libfdk.so' not loaded
+02:00:12.427: ---------------------------------
+02:00:12.427:   Loaded Modules:
+02:00:12.427:     text-freetype2.so
+02:00:12.427:     rtmp-services.so
+02:00:12.427:     obs-x264.so
+02:00:12.427:     obs-vst.so
+02:00:12.427:     obs-transitions.so
+02:00:12.427:     obs-qsv11.so
+02:00:12.427:     obs-outputs.so
+02:00:12.427:     obs-filters.so
+02:00:12.427:     obs-ffmpeg.so
+02:00:12.427:     linux-v4l2.so
+02:00:12.427:     linux-pulseaudio.so
+02:00:12.427:     linux-pipewire.so
+02:00:12.427:     linux-jack.so
+02:00:12.427:     linux-capture.so
+02:00:12.427:     linux-alsa.so
+02:00:12.427:     image-source.so
+02:00:12.427:     frontend-tools.so
+02:00:12.427:     decklink-output-ui.so
+02:00:12.427:     decklink-captions.so
+02:00:12.427: ---------------------------------
+02:00:12.428: ==== Startup complete ===============================================
+02:00:12.469: All scene data cleared
+02:00:12.469: ------------------------------------------------
+02:00:12.472: pulse-input: Server name: 'pulseaudio 16.1'
+02:00:12.472: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+02:00:12.472: pulse-input: Started recording from 'alsa_output.pci-0000_00_1f.3.analog-stereo.monitor' (default)
+02:00:12.473: [Loaded global audio device]: 'Desktop Audio'
+02:00:12.561: pulse-input: Server name: 'pulseaudio 16.1'
+02:00:12.562: pulse-input: Audio format: s16le, 44100 Hz, 2 channels
+02:00:12.562: pulse-input: Started recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo' (default)
+02:00:12.562: [Loaded global audio device]: 'Mic/Aux'
+02:00:12.566: Source ID 'pipewire-desktop-capture-source' not found
+02:00:12.566: Failed to create source 'Screen Capture (PipeWire)'!
+02:00:12.569: Switched to scene 'Scene'
+02:00:12.569: ------------------------------------------------
+02:00:12.569: Loaded scenes:
+02:00:12.569: - scene 'Scene':
+02:00:12.569:     - source: 'Screen Capture (PipeWire)' (pipewire-desktop-capture-source)
+02:00:12.569: ------------------------------------------------
+02:00:14.301: The X11 connection broke (error 1). Did the X11 server die?

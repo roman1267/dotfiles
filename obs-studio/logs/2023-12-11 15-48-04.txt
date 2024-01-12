@@ -1,0 +1,94 @@
+15:48:04.129: Platform: Wayland
+15:48:04.129: CPU Name: Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz
+15:48:04.129: CPU Speed: 2700.002MHz
+15:48:04.129: Physical Cores: 2, Logical Cores: 4
+15:48:04.129: Physical Memory: 11857MB Total, 3430MB Free
+15:48:04.129: Kernel Version: Linux 6.1.66-1-MANJARO
+15:48:04.129: Distribution: "Manjaro Linux" Unknown
+15:48:04.129: Desktop Environment: Hyprland
+15:48:04.129: Session Type: wayland
+15:48:04.134: Qt Version: 6.6.1 (runtime), 6.6.0 (compiled)
+15:48:04.134: Portable mode: false
+15:48:04.180: OBS 30.0.0-1 (linux)
+15:48:04.180: ---------------------------------
+15:48:04.181: ---------------------------------
+15:48:04.181: audio settings reset:
+15:48:04.181: 	samples per sec: 48000
+15:48:04.181: 	speakers:        2
+15:48:04.181: 	max buffering:   960 milliseconds
+15:48:04.181: 	buffering type:  dynamically increasing
+15:48:04.184: ---------------------------------
+15:48:04.184: Initializing OpenGL...
+15:48:04.184: Using EGL/Wayland
+15:48:04.246: Initialized EGL 1.5
+15:48:04.274: Loading up OpenGL on adapter Intel Mesa Intel(R) HD Graphics 520 (SKL GT2)
+15:48:04.274: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 23.1.9-manjaro1.1, shading language 4.60
+15:48:04.346: ---------------------------------
+15:48:04.347: video settings reset:
+15:48:04.347: 	base resolution:   1366x768
+15:48:04.347: 	output resolution: 852x480
+15:48:04.347: 	downscale filter:  Bicubic
+15:48:04.347: 	fps:               30/1
+15:48:04.347: 	format:            NV12
+15:48:04.347: 	YUV mode:          Rec. 709/Partial
+15:48:04.347: NV12 texture support not available
+15:48:04.347: P010 texture support not available
+15:48:04.352: Audio monitoring device:
+15:48:04.352: 	name: Default
+15:48:04.352: 	id: default
+15:48:04.352: ---------------------------------
+15:48:04.362: Failed to load 'en-US' text for module: 'decklink-captions.so'
+15:48:04.374: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+15:48:04.384: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+15:48:04.384: Failed to initialize module 'decklink.so'
+15:48:04.605: [pipewire] Available captures:
+15:48:04.605: [pipewire]     - Desktop capture
+15:48:04.605: [pipewire]     - Window capture
+15:48:04.633: v4l2loopback not installed, virtual camera disabled
+15:48:04.698: VAAPI: Failed to initialize display in vaapi_device_h264_supported
+15:48:04.698: FFmpeg VAAPI H264 encoding not supported
+15:48:04.698: VAAPI: Failed to initialize display in vaapi_device_hevc_supported
+15:48:04.699: FFmpeg VAAPI HEVC encoding not supported
+15:48:04.813: ---------------------------------
+15:48:04.813:   Loaded Modules:
+15:48:04.813:     text-freetype2.so
+15:48:04.813:     rtmp-services.so
+15:48:04.813:     obs-x264.so
+15:48:04.813:     obs-vst.so
+15:48:04.813:     obs-transitions.so
+15:48:04.813:     obs-qsv11.so
+15:48:04.813:     obs-outputs.so
+15:48:04.813:     obs-libfdk.so
+15:48:04.813:     obs-filters.so
+15:48:04.813:     obs-ffmpeg.so
+15:48:04.813:     linux-v4l2.so
+15:48:04.813:     linux-pulseaudio.so
+15:48:04.813:     linux-pipewire.so
+15:48:04.813:     linux-jack.so
+15:48:04.813:     linux-capture.so
+15:48:04.813:     linux-alsa.so
+15:48:04.813:     image-source.so
+15:48:04.813:     frontend-tools.so
+15:48:04.813:     decklink-output-ui.so
+15:48:04.813:     decklink-captions.so
+15:48:04.813: ---------------------------------
+15:48:04.813: ==== Startup complete ===============================================
+15:48:04.870: All scene data cleared
+15:48:04.870: ------------------------------------------------
+15:48:04.922: pulse-input: Server name: 'PulseAudio (on PipeWire 1.0.0) 15.0.0'
+15:48:04.923: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+15:48:04.923: pulse-input: Started recording from 'alsa_output.pci-0000_00_1f.3.analog-stereo.monitor' (default)
+15:48:04.923: [Loaded global audio device]: 'Desktop Audio'
+15:48:04.924: pulse-input: Server name: 'PulseAudio (on PipeWire 1.0.0) 15.0.0'
+15:48:04.924: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+15:48:04.924: pulse-input: Started recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo' (default)
+15:48:04.924: [Loaded global audio device]: 'Mic/Aux'
+15:48:04.926: Switched to scene 'Scene'
+15:48:04.926: ------------------------------------------------
+15:48:04.926: Loaded scenes:
+15:48:04.926: - scene 'Scene':
+15:48:04.926: ------------------------------------------------
+15:48:05.569: adding 21 milliseconds of audio buffering, total audio buffering is now 21 milliseconds (source: Desktop Audio)
+15:48:05.569: 
+16:23:50.485: Starting stream due to hotkey
+16:23:50.496: Stream output type 'rtmp_output' failed to start!

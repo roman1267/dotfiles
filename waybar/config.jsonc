@@ -1,0 +1,187 @@
+{
+    "layer": "top",
+    "margin-bottom": 6,
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/submap",
+        "mpris"
+    ],
+    "modules-center": [
+        "idle_inhibitor",
+        "pulseaudio",
+        "custom/clipboard"
+    ],
+    "modules-right": [
+        "network",
+        "temperature",
+        "memory",
+        "cpu",
+        "backlight",
+        "battery",
+        "clock",
+        "tray"
+    ],
+    "battery": {
+        "format": "{capacity}{icon}  ",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "custom/clipboard": {
+        "format": "󰨸",
+        "interval": "once",
+        "return-type": "json",
+        "on-click": "cliphist list | rofi -dmenu -p \"select item to copy\" -lines 10 | cliphist decode | wl-copy; pkill -RTMIN+9 waybar",
+        "on-click-right": "cliphist list | rofi -dmenu -p \"Select item to delete\" -lines 10 | cliphist delete",
+        "on-click-middle": "rm -f ~/.cache/cliphist/db; pkill -RTMIN+9 waybar",
+        "exec": "printf '{\"tooltip\":\"%s\"}' $(cliphist list | wc -l)' item(s) in the clipboard\r(Mid click to clear)'",
+        "exec-if": "[ -x \"$(command -v cliphist)\" ] && [ $(cliphist list | wc -l) -gt 0 ]",
+        "signal": 9
+    },
+    // NOTE: Probably don't need this unless PA breaks
+    "wireplumber": {},
+    "pulseaudio": {
+        "format": "{volume}% {icon} ",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "scroll-step": 1,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
+    },
+    "temperature": {
+        "thermal-zone": 8,
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C ",
+        "format": "{temperatureC}°C "
+    },
+    // WARNING: not really sure what this does
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ]
+    },
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        },
+        "dynamic-len": 60,
+        "title-len": 30,
+        "artist-len": 20,
+        "album-len": 20,
+        "position-len": 20,
+        "length-len": 20
+    },
+    "network": {
+        "interface": "wlp1s0",
+        "format": "{ifname}",
+        "format-wifi": "{essid} ({signalStrength}%)  ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗 ",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗 ",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
+        "tooltip-format-ethernet": "{ifname}  ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+    "idle_inhibitor": {
+        "format": "{icon} ",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "clock": {
+        "format": "{:%a, %H:%M}",
+        "format-alt": "{:%a, %b %d  %H:%M}"
+    },
+    // WARNING: does not work!
+    "custom/cava": {
+        "exec": "sleep 3 && cava -p /home/username/.config/cava/cava.conf | sed -u 's/;//g;s/0/0/g;s/1/1/g;s/2/2/g;s/3/3/g;s/4/4/g;s/5/5/g;s/6/6/g;s/7/7/g;s/8/8/g;s/9/9/g;'"
+    },
+    "backlight/slider": {},
+    "backlight": {
+        "format": "{percent} "
+    },
+    // NOTE: unnecessary with blueman in sys-tray
+    "bluetooth": {},
+    // "cpu": {
+    //     "interval": 1,
+    //     "format": "{usage}󰘚 "
+    // },
+    "cpu": {
+        "interval": 1,
+        "format": "{usage}%{icon}",
+        "format-icons": [
+            "<span color='#5b6078'>󰘚 </span>",
+            "<span color='#5b6078'>󰘚 </span>",
+            "<span color='#5b6078'>󰘚 </span>",
+            "<span color='#5b6078'>󰘚 </span>",
+            "<span color='#EED49F'>󰘚 </span>",
+            "<span color='#EED49F'>󰘚 </span>",
+            "<span color='#EED49F'>󰘚 </span>",
+            "<span color='#ED8796'>󰘚 </span>"
+        ]
+    },
+    // NOTE: No clue what this does
+    "upower": {},
+    "memory": {
+        "interval": 30,
+        "format": "{used:0.1f}G/{total:0.1f}G  "
+    },
+    "disk": {},
+    // TODO: set this up for easy gaming optimizations
+    "gamemode": {},
+    "hyprland/workspaces": {
+        "show-special": true
+    },
+    "hyprland/submap": {},
+    // NOTE: can be used to show album art w/ playerctl
+    "image": {},
+    "jack": {},
+    // WARNING: Still in beta
+    "tray": {
+        "show-passive-items": true
+    }
+}
