@@ -24,10 +24,10 @@ super + XF86MonBrightnessDown
 	system_notifier.sh screen_warmth down
 
 XF86MonBrightnessUp
-	system_notifier.sh screen_brightness up
+	brightnessctl s +5%
 
 XF86MonBrightnessDown
-	system_notifier.sh screen_brightness down
+	brightnessctl s 5%-
 
 XF86AudioRaiseVolume
 	pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -115,6 +115,8 @@ super + grave
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+super + shift + d
+	bspc node -d Desktop
 ##### preselect
 
 # preselect the direction

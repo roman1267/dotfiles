@@ -1,8 +1,15 @@
 #! /bin/sh
+# TODO: Factor this into its own file
+primary_monitor="$(xrandr -q | grep primary | awk 'NR==1{print $1}')"
+monitors=$(xrandr -q grep "\bconnected\b" | awk '{print $1}')
 
-bspc monitor -d I II III IV V VI VII
+bspc monitor "$primary_monitor" -d I II III IV V VI VII
+for monitor in $monitors; do
+    bspc monitor "$monitor" -d 1 2 3 4 5 6 7
+done
 bspc config remove_disabled_monitors	true
 bspc config remove_unplugged_monitors	true
+#######################
 
 bspc config border_width         2
 bspc config window_gap          12
@@ -34,6 +41,27 @@ else
 
     # set the wallpaper
     feh --bg-scale ~/Downloads/wp11912493-catppuccin-wallpapers.png
+
+    # hide apps at startup
+    # HACK: "There's gotta be a better way"
+    hide_app() {
+        case "$1" in
+            "flatpak")
+                flatpak run "$2" &
+                while ! pgrep -f "$2" > /dev/null; do
+                    true
+                done
+                sleep 7
+                xdotool key "$3"
+                ;;
+            *)
+                echo "not handled yet"
+                ;;
+        esac
+    }
+
+    pgrep -x todoist > /dev/null || hide_app flatpak com.todoist.Todoist "Super_L+x" &
+    pgrep -x keepassxc > /dev/null || hide_app flatpak org.keepassxc.KeePassXC  "Super_L+Shift+P" &
 
     # daemonize this entire process
     {

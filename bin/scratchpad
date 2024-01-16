@@ -1,0 +1,51 @@
+#!/bin/bash
+
+if ! wmctrl -l | grep "$1" > /dev/null; then
+    dunstify "$1 not open"
+    exit 1
+fi
+echo $1
+echo "$(wmctrl -l | grep "KeePassXC" | awk '{print $1}')"
+node_name="$(wmctrl -l | grep "$1" | awk '{print $1}')"
+# echo "$node_name"
+focused_desktop="$(bspc query -d 'focused' -D --names)"
+focused_desktop_nodes="$(bspc query -N -d focused)"
+action="$2"
+hidden_nodes="$(bspc query -N -n .hidden.window)"
+
+is_hidden() {
+    # echo "is_hidden() reached"
+    for node in "${hidden_nodes[@]}"
+    do
+        # echo "local node: $node"
+        if [ "${node_name^^}" = "${node^^}" ]; then
+            # echo "hidden"
+            return 0
+        fi
+    done
+    # echo "not hidden"
+    return 1
+}
+
+is_on_focused_desktop() {
+    echo "is_on_focused_desktop() reached"
+    for node in "${focused_desktop_nodes[@]}"
+    do
+        echo "local node: $node"
+        if [ "${node_name^^}" == "${node^^}" ]; then
+            echo "not on focused desktop"
+            return 1
+        fi
+    done
+    echo "on focused desktop"
+    return 0
+}
+# is_on_focused_desktop
+# echo $?
+# if is_on_focused_desktop; then
+#     bspc node "$node_name" --flag hidden="$action"
+# else
+#     true
+# fi
+bspc node "${node_name^^}" -d "$focused_desktop"
+bspc node "${node_name^^}" --flag hidden="$action"
