@@ -23,6 +23,7 @@ bspc config single_monocle      true
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a KeePassXC state=floating follow=on rectangle=1350x690+5+65 sticky=false
 bspc rule -a Todoist state=floating follow=on rectangle=1350x690+5+65 sticky=true
+bspc rule -a thunderbird state=floating follow=on rectangle=1350x690+5+65 sticky=true
 bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
