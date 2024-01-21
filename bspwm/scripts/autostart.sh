@@ -13,5 +13,8 @@ pgrep -x polybar > /dev/null || polybar -r main &
 pgrep -x birdtray > /dev/null || birdtray &
 pgrep -x flameshot > /dev/null || flameshot &
 pgrep -x nm-applet > /dev/null || nm-applet &
+pgrep -x todoist > /dev/null || com.todoist.Todoist &
+pgrep -x keepassxc > /dev/null || org.keepassxc.KeePassXC &
+
 ###############################
 pgrep -x xss-lock > /dev/null || xss-lock --transfer-sleep-lock -- i3lock -f -c 939AB7 --nofork &

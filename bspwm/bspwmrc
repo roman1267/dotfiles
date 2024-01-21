@@ -21,48 +21,30 @@ bspc config gapless_monocle      true
 bspc config single_monocle      true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a KeePassXC state=floating follow=on rectangle=1350x690+5+65 sticky=false
-bspc rule -a Todoist state=floating follow=on rectangle=1350x690+5+65 sticky=true
-bspc rule -a thunderbird state=floating follow=on rectangle=1350x690+5+65 sticky=true
+bspc rule -a KeePassXC state=floating follow=on rectangle=1350x690+5+65 sticky=false hidden=true
+bspc rule -a Todoist state=floating follow=on rectangle=1350x690+5+65 sticky=true hidden=true
+bspc rule -a thunderbird:Mail:* state=floating follow=on rectangle=1350x690+5+65 sticky=true
 bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 # bspwm directory
-bspwm_dir=/home/"$(whoami)"/.config/bspwm/
-sh -c "$bspwm_dir"/scripts/autostart.sh &
+scripts_dir=/home/"$(whoami)"/.config/bspwm/
+sh -c "$scripts_dir"/scripts/autostart.sh &
 
 if [ "$1" != 0 ];then
     # programs to only run on restarts
     dunstify -t 1500 "bspwm restarted"
 else
     # programs to run at start only
-    sh -c "$bspwm_dir"/scripts/settings.sh &
+    sh -c "$scripts_dir"/scripts/settings.sh &
 
     # set the wallpaper
     feh --bg-scale ~/Downloads/wp11912493-catppuccin-wallpapers.png
 
-    # hide apps at startup
-    # HACK: "There's gotta be a better way"
-    hide_app() {
-        case "$1" in
-            "flatpak")
-                flatpak run "$2" &
-                while ! pgrep -f "$2" > /dev/null; do
-                    true
-                done
-                sleep 7
-                xdotool key "$3"
-                ;;
-            *)
-                echo "not handled yet"
-                ;;
-        esac
-    }
-
-    pgrep -x todoist > /dev/null || hide_app flatpak com.todoist.Todoist "Super_L+x" &
-    pgrep -x keepassxc > /dev/null || hide_app flatpak org.keepassxc.KeePassXC  "Super_L+Shift+P" &
+    # TODO: Set screen temperature without halting wm start
+    # redshift -x -O 3000K &
 
     # daemonize this entire process
     {

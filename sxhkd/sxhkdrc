@@ -73,11 +73,14 @@ super + c
 
 ##### brave
 super + b
-	firefox
+	firefox	
 
 ##### KeePassXC
 super + shift + p
 	scratchpad KeePassXC
+
+super + x
+	scratchpad Todoist
 #########
 # bspwm #
 #########
