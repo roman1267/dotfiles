@@ -40,3 +40,5 @@ qalculate/qalculate-gtk.cfg
 kwalletmanager5rc
 GIMP/2.10
 gtk-2.0
+QtProject.conf
+kwalletrc
