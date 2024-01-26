@@ -81,9 +81,14 @@ super + shift + p
 
 super + x
 	scratchpad Todoist
+
 #########
 # bspwm #
 #########
+
+##### Lock system
+super + shift + i
+	i3lock -f -c 939AB7
 
 # quit/restart bspwm
 super + alt + {q,r}
