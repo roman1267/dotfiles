@@ -12,10 +12,10 @@ if status is-interactive
     abbr --add lg "lazygit"
     # ---------------- #
     # zellij options
-    set ZELLIJ_AUTO_ATTACH true
-    set ZELLIJ_AUTO_EXIT true
-
-    eval (zellij setup --generate-auto-start fish | string collect)
+    # set ZELLIJ_AUTO_ATTACH true
+    # set ZELLIJ_AUTO_EXIT true
+    #
+    # eval (zellij setup --generate-auto-start fish | string collect)
     # ---------------- #
     # general options
     set -U fish_greeting
@@ -23,16 +23,16 @@ if status is-interactive
     pfetch
 end
 
-if not set -q ZELLIJ
-    if test "$ZELLIJ_AUTO_ATTACH" = "true"
-        zellij attach -c
-    else
-        zellij
-    end
-
-    if test "$ZELLIJ_AUTO_EXIT" = "true"
-        kill $fish_pid
-    end
-end
+# if not set -q ZELLIJ
+#     if test "$ZELLIJ_AUTO_ATTACH" = "true"
+#         zellij attach -c
+#     else
+#         zellij
+#     end
+#
+#     if test "$ZELLIJ_AUTO_EXIT" = "true"
+#         kill $fish_pid
+#     end
+# end
 
 starship init fish | source

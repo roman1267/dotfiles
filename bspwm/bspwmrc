@@ -13,7 +13,7 @@ for monitor in $monitors; do
     fi
 done
 
-feh --bg-scale "$HOME/Pictures/Wallpapers/Catppuccin/wallpaper.jpeg"
+feh --bg-scale "$HOME/Pictures/Wallpapers/gruvbox/wall_secondary.png"
 
 bspc config remove_disabled_monitors	true
 bspc config remove_unplugged_monitors	true
