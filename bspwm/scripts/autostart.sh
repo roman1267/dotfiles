@@ -8,7 +8,7 @@ pgrep -x dunst > /dev/null || dunst &
 pgrep -x onedrive > /dev/null || onedrive --m --disable-notifications &
 # Applications
 # pgrep -x conky > /dev/null || conky -c /home/romanm/.config/conky/Catppuccin/macchiato.conf &
-pgrep -x polybar > /dev/null || polybar -r main &
+pgrep -x polybar > /dev/null || polybar -r -c /home/roman/.config/polybar/gruvbox-dark-config.ini main &
 # must be started after polybar
 pgrep -x birdtray > /dev/null || birdtray &
 pgrep -x flameshot > /dev/null || flameshot &
