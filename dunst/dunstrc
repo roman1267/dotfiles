@@ -1,7 +1,7 @@
 [global]
 frame_width = 0
-background = "#363A4F"
-foreground = "#CAD3F5"
+background = "#262626"
+foreground = "#f9f5d7"
 offset = 0x60
 markup = full
 dmenu = /usr/bin/rofi -dmenu
