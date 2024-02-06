@@ -31,7 +31,6 @@ onedrive/refresh_token
 onedrive/sync_list
 nvim
 lazygit/state.yml
-lazygit/state.yml
 nvim
 pulse
 pavucontrol.ini
@@ -42,3 +41,4 @@ GIMP/2.10
 gtk-2.0
 QtProject.conf
 kwalletrc
+libreoffice/4/.lock
