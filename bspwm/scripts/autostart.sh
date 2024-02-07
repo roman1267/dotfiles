@@ -5,7 +5,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x picom > /dev/null || picom --backend glx &
 pgrep -x xclip > /dev/null || xclip &
 pgrep -x dunst > /dev/null || dunst &
-pgrep -x onedrivegui > /dev/null || onedrivegui &
+pgrep -x onedrive > /dev/null || onedrivegui &
 # Applications
 # pgrep -x conky > /dev/null || conky -c /home/romanm/.config/conky/Catppuccin/macchiato.conf &
 pgrep -x polybar > /dev/null || polybar -r -c /home/roman/.config/polybar/gruvbox-dark-config.ini main &
