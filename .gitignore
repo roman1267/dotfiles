@@ -42,3 +42,5 @@ gtk-2.0
 QtProject.conf
 kwalletrc
 libreoffice/4/.lock
+fontforge
+htop
