@@ -2,7 +2,7 @@
 
 # System
 pgrep -x sxhkd > /dev/null || sxhkd &
-pgrep -x picom > /dev/null || picom --backend glx &
+# pgrep -x picom > /dev/null || picom --backend glx &
 pgrep -x xclip > /dev/null || xclip &
 pgrep -x dunst > /dev/null || dunst &
 pgrep -x onedrive > /dev/null || onedrivegui &
