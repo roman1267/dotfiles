@@ -4,7 +4,7 @@ primary_monitor="$(xrandr -q | grep primary | awk 'NR==1{print $1}')"
 monitors=$(xrandr --listactivemonitors | awk 'NR>1 {print $NF}')
 resolution=$(xrandr --current | grep "\*" | awk '{print $1}')
 resolution_width=$(echo "$resolution" | awk -F 'x' '{print $1}')
-resolution_height=$(echo "$resolution" | awk -F 'x' '{print $2}')
+# resolution_height=$(echo "$resolution" | awk -F 'x' '{print $2}')
 
 bspc monitor "$primary_monitor" -d I II III IV V VI VII
 for monitor in $monitors; do
@@ -20,7 +20,7 @@ bspc config remove_unplugged_monitors	true
 #######################
 
 bspc config border_width         2
-bspc config window_gap          12
+# bspc config window_gap          12
 bspc config top_monocle_padding          10
 
 bspc config split_ratio          0.52
@@ -30,9 +30,9 @@ bspc config single_monocle      true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 # Rectangle setting throws errors sometimes
-bspc rule -a KeePassXC state=floating follow=on # rectangle="$((resolution_width-20))x$((resolution_height-20))"+10+60 sticky=false hidden=false
-bspc rule -a Todoist state=floating follow=off # rectangle="$((resolution_width-20))x$((resolution_height-66))"+10+60 sticky=false hidden=false
-bspc rule -a thunderbird:Mail:* state=floating follow=on # rectangle="$((resolution_width-20))x$((resolution_height-66))"+10+60 sticky=false
+bspc rule -a KeePassXC state=floating follow=off # rectangle="$((resolution_width-20))x$((resolution_height-20))"+10+60 sticky=false hidden=false
+bspc rule -a Todoist desktop='^3' follow=off focus=off # rectangle="$((resolution_width-20))x$((resolution_height-66))"+10+60 sticky=false hidden=false
+bspc rule -a thunderbird:Mail:* desktop='^4' follow=on # rectangle="$((resolution_width-20))x$((resolution_height-66))"+10+60 sticky=false
 bspc rule -a Blueman-manager state=floating follow=on
 bspc rule -a Chromium desktop='^2'
 bspc rule -a firefox desktop='^2' follow=on

@@ -10,6 +10,7 @@ if status is-interactive
     abbr --add se "sudoedit"
     abbr --add ls "exa -lBa"
     abbr --add lg "lazygit"
+    abbr --add gc "git checkout"
     # ---------------- #
     # zellij options
     # set ZELLIJ_AUTO_ATTACH true
