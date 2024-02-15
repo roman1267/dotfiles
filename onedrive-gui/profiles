@@ -1,0 +1,6 @@
+[romanxmaciel@gmail.com]
+config_file = /home/roman/.config/onedrive/config
+auto_sync = True
+account_type = Personal
+free_space = 1.0TiB
+
