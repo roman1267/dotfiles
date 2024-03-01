@@ -1,1 +1,0 @@
-dunstify "script reached!"

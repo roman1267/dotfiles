@@ -5,34 +5,40 @@
 ;;# Variable Definitions #
 ;;########################
 
-(deflisten workspaces :initial "1"
-  `tail -f /tmp/hypr_sockets/active_ws`)
-
-(deflisten special_workspaces :initial "0"
-  `tail -f /tmp/hypr_sockets/special_ws`)
-
-(deflisten submap_from_file :initial ""
-  `tail -f /tmp/hypr_sockets/active_submap`)
-
 ;; (defvar foo_test "(box (button :css 'button {color: red;}' 'foo'))")
+(defvar special_workspaces "fd")
+(defvar workspaces "fd")
+(defvar scripts "$XDG_CONFIG_HOME/eww/scripts/")
+(deflisten idle_inhibited "tail -F $XDG_CONFIG_HOME/eww/scripts/idle_inhibitor.sh is_idle_inhibited")
 
 ;;######################
 ;;# Widget Definitions #
 ;;######################
 
+;; Main bar
 (defwidget bar []
   (box :halign "start" :space-evenly false
-       (workspace)
-       (special_workspace)
-       ;; FIXME: Non-functional
-       ;; (submap)
-       (cputemp)
-       (time_date)
+    (close_button)
+    (workspace)
+    (special_workspace)
+
+    ;; (cputemp)
+    ;; (time_date)
+    (idle_inhibitor)
   )
 )
 
+(defwidget close_button []
+  (box
+    (button
+      :css 'button {color:red;}'
+      :onclick 'eww close main-menu'
+      'close_placeholder'
+    )
+  )
+)
 (defwidget workspace []
-           (literal :content workspaces)
+  (literal :content workspaces)
 )
 
 ;; TODO: Make functional
@@ -40,13 +46,9 @@
   (literal :content special_workspaces)
 )
 
-(defwidget submap [] 
-           (literal :content submap_from_file)
-)
-
 (defwidget cputemp []
-           ;; NOTE: Example of syntax for accessing values. EWW_TEMPS gives the entire array of possible values for debugging
-           (button "core 1 temp: ${EWW_TEMPS.CORETEMP_CORE_1}")
+  ;; NOTE: Example of syntax for accessing values. EWW_TEMPS gives the entire array of possible values for debugging
+  (button "core 1 temp: ${EWW_TEMPS.CORETEMP_CORE_1}")
 )
 
 (defwidget time_date [] "${formattime(EWW_TIME,"%R %D")}")
@@ -65,7 +67,12 @@
 ;; TODO: 
 (defwidget clipboard_manager [] "foo")
 ;; TODO: 
-(defwidget idle_inhibitor [] "foo")
+(defwidget idle_inhibitor [] 
+  (button 
+    :onclick "bash ${scripts}/idle_inhibitor.sh"
+    "inhibit idle"
+  )
+)
 
 ;; NOTE: Future feature: (defwidget system_tray [] "foo")
 
@@ -73,7 +80,7 @@
 ;;# Window Definitions #
 ;;######################
 
-(defwindow example
+(defwindow main-menu
   :monitor 0
   :geometry (geometry :x "0%"
     :y "0px"
@@ -81,10 +88,8 @@
     :height "30px"
     :anchor "top center")
   :stacking "fg"
-  :reserve (struts :distance "40px" :side "bottom")
-  :windowtype "dock"
-  :exclusive true
+  :windowtype "toolbar"
   :focusable false
-  :wm-ignore false
+  :wm-ignore true
   (bar)
 )
