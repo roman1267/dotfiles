@@ -8,8 +8,11 @@
 ;; (defvar foo_test "(box (button :css 'button {color: red;}' 'foo'))")
 (defvar special_workspaces "fd")
 (defvar workspaces "fd")
-(defvar scripts "$XDG_CONFIG_HOME/eww/scripts/")
-(deflisten idle_inhibited "tail -F $XDG_CONFIG_HOME/eww/scripts/idle_inhibitor.sh is_idle_inhibited")
+(defpoll is_idle_inhibited
+  :interval "50ms"
+  :initial "no"
+  '$XDG_CONFIG_HOME/eww/scripts/idle_inhibitor.sh is_idle_inhibited'
+)
 
 ;;######################
 ;;# Widget Definitions #
@@ -68,9 +71,12 @@
 (defwidget clipboard_manager [] "foo")
 ;; TODO: 
 (defwidget idle_inhibitor [] 
-  (button 
-    :onclick "bash ${scripts}/idle_inhibitor.sh"
-    "inhibit idle"
+  ;; (literal :content is_idle_inhibited)
+  (box
+    (button
+      :onclick "$XDG_CONFIG_HOME/eww/scripts/idle_inhibitor.sh toggle"
+      :css {is_idle_inhibited ? "button {color: green;}" : "button {color: red;}"} "idle_inhibitor"
+    )
   )
 )
 

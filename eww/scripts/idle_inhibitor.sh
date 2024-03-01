@@ -18,17 +18,23 @@ is_idle_inhibited() {
     fi
 }
 
+setup() {
+    mkdir -p /tmp/eww/module_idle_inhibitor/
+}
+
+setup
+
 is_inhibited_raw='xset q | rg "DPMS is Enabled"'
 
 case "$1" in
     is_idle_inhibited)
         if is_idle_inhibited "$is_inhibited_raw"; then
-            echo "true"
+            echo true
         else
-            echo "false"
+            echo false
         fi
         ;;
-    *)
+    toggle)
         toggle_idle_inhibitor "$is_inhibited_raw"
         ;;
 esac
