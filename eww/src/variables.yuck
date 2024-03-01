@@ -1,0 +1,7 @@
+(defvar special_workspaces "fd")
+(defvar workspaces "fd")
+(defpoll is_idle_inhibited
+  :interval "50ms"
+  :initial "no"
+  '$XDG_CONFIG_HOME/eww/scripts/idle_inhibitor.sh is_idle_inhibited'
+)

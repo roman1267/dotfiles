@@ -1,0 +1,28 @@
+(defwindow polybar-menu
+  :monitor 0
+  :geometry (geometry
+    :x "90%"
+    :y "90%"
+    :width "60%"
+    :height "30px"
+    :anchor "top center"
+  )
+  :reserve (struts
+    :distance "90px"
+    :side "top"
+  )
+  :stacking "fg"
+  :windowtype "dock"
+  :exclusive true
+  :focusable false
+  :wm-ignore true
+  (main-menu)
+)
+
+(defwindow polybar-menu-power-dialog
+  :monitor 0
+  :geometry (geometry
+    :x "25%"
+  )
+  (main-menu)
+)
