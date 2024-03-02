@@ -1,0 +1,31 @@
+(defwindow polybar-menu
+  :monitor 0
+  :geometry (geometry
+    :x "0%"
+    :y "8px"
+    :width "80%"
+    :height "30px"
+    :anchor "top center"
+  )
+  :stacking "bg"
+  :windowtype "dock"
+  :reserve (struts :distance "46px" :side "top")
+  :wm-ignore false
+  (main)
+)
+
+(defwindow barebones
+  :monitor 0
+  :geometry (geometry
+    :x "0%"
+    :y "8px"
+    :width "80%"
+    :height "30px"
+    :anchor "top center"
+  )
+  :stacking "bg"
+  :windowtype "dock"
+  :reserve (struts :distance "46px" :side "top")
+  :wm-ignore false
+  "test"
+)

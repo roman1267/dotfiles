@@ -1,0 +1,31 @@
+;; movie_mode var
+(defvar is_movie_mode
+  "false"
+)
+
+;; utils vars
+(defvar utils_stack 0)
+(defpoll whoami
+  :interval "15m"
+  "whoami"
+)
+
+;; brightness vars
+;;(deflisten current-brightness "cat /sys/class/backlight/intel_backlight/actual_brightness")
+(defvar current-brightness 10)
+(defvar bright 0)
+(defvar bright-slidedir "slideup")
+
+;; volume vars
+;; (defpoll current-volume :interval "100ms" "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | tr -dc [:digit:]")
+(defvar current-volume 50)
+;; (defpoll ismuted :interval "100ms" "pactl get-sink-mute @DEFAULT_SINK@")
+(defvar ismuted "yes")
+(defvar vol 0)
+(defvar vol-slidedir "slideup")
+
+
+(defvar active_workspace
+  "I"
+  ;; "wmctrl -d | rg \"\\*\" | awk '{print $NF}'"
+)
