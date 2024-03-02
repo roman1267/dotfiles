@@ -1,28 +1,31 @@
 (defwindow polybar-menu
   :monitor 0
   :geometry (geometry
-    :x "90%"
-    :y "90%"
-    :width "60%"
+    :x "0%"
+    :y "8px"
+    :width "80%"
     :height "30px"
     :anchor "top center"
   )
-  :reserve (struts
-    :distance "90px"
-    :side "top"
-  )
-  :stacking "fg"
+  :stacking "bg"
   :windowtype "dock"
-  :exclusive true
-  :focusable false
-  :wm-ignore true
-  (main-menu)
+  :reserve (struts :distance "46px" :side "top")
+  :wm-ignore false
+  (main)
 )
 
-(defwindow polybar-menu-power-dialog
+(defwindow barebones
   :monitor 0
   :geometry (geometry
-    :x "25%"
+    :x "0%"
+    :y "8px"
+    :width "80%"
+    :height "30px"
+    :anchor "top center"
   )
-  (main-menu)
+  :stacking "bg"
+  :windowtype "dock"
+  :reserve (struts :distance "46px" :side "top")
+  :wm-ignore false
+  "test"
 )

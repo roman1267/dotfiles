@@ -1,56 +1,247 @@
+;; Important glyphs
+;; 󰐥 󰑐
+;; 󰓃
+;; 󰌢
+;; 
 ;; Main menu
-(defwidget main-menu []
-  (box :halign "start" :space-evenly false
-    (close_button)
-    (workspace)
-    (special_workspace)
+(defwidget main[]
+  (box
+    :halign "center"
+    :space-evenly true
+    :spacing 80
+    :hexpand true
+    ;; (sys_info)
+    (utils)
+    (workspaces)
+  )
+)
 
-    ;; (cputemp)
-    ;; (time_date)
-    (idle_inhibitor)
-    (power_menu)
+(defwidget utils []
+  (eventbox
+    :onhoverlost "eww update utils_stack=0"
+    (stack
+      :selected utils_stack
+      :same-size true
+      (utils_display)
+      (power_menu)
+      (confirm_poweroff)
+      (confirm_reboot)
+      (confirm_logout)
+      (brightness)
+      (volume)
+    )
+  )
+)
+
+(defwidget utils_display[]
+  (box
+    (movie_mode)
+    (button
+      :onclick "eww update utils_stack=1"
+      (label
+        :width 40
+        :text "󰐥"
+        :css "label {font-size: 20;font-family: JetBrainsNerdFontMono;}"
+      )
+    )
+    (button
+      :onclick "eww update utils_stack=5"
+      (label
+        :text "☼"
+        :css "label {font-size: 20;}"
+      )
+    )
+    (button
+      :onclick "eww update utils_stack=6"
+      (label
+        :text "󰓃"
+        :css "label {font-size: 20;font-family: JetBrainsNerdFontMono;}"
+      )
+    )
   )
 )
 
 (defwidget power_menu []
   (box
     (button
-      :css 'button {color:blue;}'
-      :onclick 'sudo /sbin/poweroff'
-      'power menu'
+      :width 40
+      :onclick "eww update utils_stack=2"
+      "poweroff"
+    )
+    (button
+      :width 40
+      :onclick "eww update utils_stack=3"
+      "reboot"
+    )
+    (button
+      :width 40
+      :onclick "eww update utils_stack=4"
+      "logout"
     )
   )
 )
+
+(defwidget confirm_poweroff []
+  (box
+    (button
+      :width 40
+      :onclick "sudo /sbin/poweroff"
+      "poweroff"
+    )
+    (button
+      :width 40
+      :onclick "eww update utils_stack=1"
+      "no"
+    )
+  )
+)
+
+(defwidget confirm_reboot []
+  (box
+    (button
+      :width 40
+      :onclick "sudo /sbin/reboot"
+      "reboot"
+    )
+    (button
+      :width 40
+      :onclick "eww update utils_stack=1"
+      "no"
+    )
+  )
+)
+
+(defwidget confirm_logout []
+  (box
+    (button
+      :width 40
+      :onclick "pkill -u ${whoami}"
+      "logout"
+    )
+    (button
+      :width 40
+      :onclick "eww update utils_stack=1"
+      "no"
+    )
+  )
+)
+
+(defwidget brightness []
+  (eventbox
+    :onhover "eww update bright-slidedir=\"slidedown\" && eww update bright=1"
+    :onhover "eww update utils_stack=5"
+    :onhoverlost "eww update bright-slidedir=\"slideup\"&& eww update bright=0"
+    (stack
+      :selected bright
+      :transition bright-slidedir
+      :same-size true
+      (scale 
+        :width 100
+        :value current-brightness 
+        :tooltip "Brightness: ${round(current-brightness, 0)}%" 
+        :onchange "brightnessctl set {}%" 
+        :orientation "h" 
+        :flipped false 
+        :max 101
+        :min 0
+      )
+    )
+  )
+)
+
+(defwidget volume []
+  (eventbox
+    :onclick {ismuted == "Mute: yes" ? "eww update vol-slidedir=\"slidedown\" && pactl set-sink-mute @DEFAULT_SINK@ toggle" : "eww update vol-slidedir=\"slideup\" && pactl set-sink-mute @DEFAULT_SINK@ toggle" }
+    (stack
+      :selected {ismuted == "Mute: yes" ? 1 : 0}
+      :transition vol-slidedir
+      :same-size true
+      (scale 
+        :width 100
+        :value current-volume 
+        :tooltip "Volume: ${round(current-volume, 0)}%" 
+        :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%" 
+        :orientation "h" 
+        :flipped false 
+        :max 101
+        :min 0
+      )
+      (label
+        :text "muted"
+      )
+    )
+  )
+)
+
 (defwidget close_button []
   (box
     (button
       :css 'button {color:red;}'
       :onclick 'eww close polybar-menu'
-      'close_placeholder'
+      'x'
     )
   )
 )
-(defwidget workspace []
-  (literal :content workspaces)
+
+(defwidget movie_mode [] 
+  (eventbox
+    (button
+      :onclick "./scripts/movie_mode.sh toggle && eww update is_movie_mode=$(./scripts/movie_mode.sh is_movie_mode)"
+      :tooltip {is_movie_mode}
+      :css {is_movie_mode ? "button {color: green;}" : "button {color: red;}"} "󰌢"
+    )
+  )
 )
 
-;; TODO: Make functional
-(defwidget special_workspace []
-  (literal :content special_workspaces)
+(defwidget sys_info []
+  (box
+    :space-evenly false
+    :spacing 20
+    :halign "center"
+    (time_date)
+    (battery)
+    (cputemp)
+  )
+)
+
+(defwidget battery []
+  (tooltip
+    "Status: ${EWW_BATTERY["BAT0"]["status"]}"
+    "󰁹 ${EWW_BATTERY["BAT0"]["capacity"]}%"
+  )
 )
 
 (defwidget cputemp []
   ;; NOTE: Example of syntax for accessing values. EWW_TEMPS gives the entire array of possible values for debugging
-  (button "core 1 temp: ${EWW_TEMPS.CORETEMP_CORE_1}")
+  (box 
+    :tooltip "temp"
+    "core 1 temp: ${EWW_TEMPS.CORETEMP_CORE_1}"
+  )
 )
 
-(defwidget time_date [] "${formattime(EWW_TIME,"%R %D")}")
+(defwidget time_date []
+  " ${formattime(EWW_TIME,"%R")}"
+)
+
+(defvar workspace_list "[\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\"]")
+
+(defwidget workspaces []
+  (eventbox
+;;    :onscroll {"{}" == "up" ? "bspc desktop -f next.local" : "bspc desktop -f prev.local"}
+    (box
+      (for entry in workspace_list
+        (button 
+          :onclick "bspc desktop -f ${entry}"
+          :css {active_workspace == entry ? "button {color: red;}" : ""}
+          entry
+        )
+      )
+    )
+  )
+)
+
 ;; TODO: 
 (defwidget weather [] "foo")
-;; TODO: 
-(defwidget backlight [] "foo")
-;; TODO: 
-(defwidget audio_volume [] "foo")
 ;; TODO: 
 (defwidget cpu_usage [] "foo")
 ;; TODO: 
@@ -59,15 +250,5 @@
 (defwidget network_info [] "foo")
 ;; TODO: 
 (defwidget clipboard_manager [] "foo")
-;; TODO: 
-(defwidget idle_inhibitor [] 
-  ;; (literal :content is_idle_inhibited)
-  (box
-    (button
-      :onclick "$XDG_CONFIG_HOME/eww/scripts/idle_inhibitor.sh toggle"
-      :css {is_idle_inhibited ? "button {color: green;}" : "button {color: red;}"} "idle_inhibitor"
-    )
-  )
-)
 
 ;; NOTE: Future feature: (defwidget system_tray [] "foo")
