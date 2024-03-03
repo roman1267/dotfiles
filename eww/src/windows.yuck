@@ -1,15 +1,16 @@
-(defwindow polybar-menu
+(defwindow bar
   :monitor 0
   :geometry (geometry
-    :x "0%"
-    :y "8px"
-    :width "80%"
+    ;; NOTE: Useless for i3
+    ;; :x "0%"
+    ;; :y "8px"
+    ;; :width "60%"
     :height "30px"
     :anchor "top center"
   )
   :stacking "bg"
   :windowtype "dock"
-  :reserve (struts :distance "46px" :side "top")
+  :reserve (struts :distance "60px" :side "top")
   :wm-ignore false
   (main)
 )
@@ -17,14 +18,14 @@
 (defwindow barebones
   :monitor 0
   :geometry (geometry
-    :x "0%"
-    :y "8px"
+    ;; :x "0%"
+    ;; :y "8px"
     :width "80%"
-    :height "30px"
-    :anchor "top center"
+    ;; :height "30px"
+    ;; :anchor "top center"
   )
   :stacking "bg"
-  :windowtype "dock"
+  :windowtype "normal"
   :reserve (struts :distance "46px" :side "top")
   :wm-ignore false
   "test"

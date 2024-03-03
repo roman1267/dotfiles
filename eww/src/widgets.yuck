@@ -10,7 +10,7 @@
     :space-evenly true
     :spacing 80
     :hexpand true
-    ;; (sys_info)
+    (sys_info)
     (utils)
     (workspaces)
   )
@@ -51,11 +51,15 @@
         :css "label {font-size: 20;}"
       )
     )
-    (button
-      :onclick "eww update utils_stack=6"
-      (label
-        :text "󰓃"
-        :css "label {font-size: 20;font-family: JetBrainsNerdFontMono;}"
+    (eventbox
+      :onhover "if [ \"$(pactl get-sink-mute @DEFAULT_SINK@)\" == \"Mute: yes\" ]; then eww update is_muted=\"Mute: yes\"; else eww update is_muted=\"Mute: no\"; fi; eww update current_volume=\"$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | tr -dc [:digit:])\""
+
+      (button
+        :onclick "eww update utils_stack=6"
+        (label
+          :text "󰓃"
+          :css "label {font-size: 20;font-family: JetBrainsNerdFontMono;}"
+        )
       )
     )
   )
@@ -151,16 +155,16 @@
 
 (defwidget volume []
   (eventbox
-    :onclick {ismuted == "Mute: yes" ? "eww update vol-slidedir=\"slidedown\" && pactl set-sink-mute @DEFAULT_SINK@ toggle" : "eww update vol-slidedir=\"slideup\" && pactl set-sink-mute @DEFAULT_SINK@ toggle" }
+    :onrightclick { is_muted == "Mute: yes" ? "pactl set-sink-mute @DEFAULT_SINK@ 0 && eww update is_muted=\"Mute: no\"" : "pactl set-sink-mute @DEFAULT_SINK@ 1 && eww update is_muted=\"Mute: yes\""}
     (stack
-      :selected {ismuted == "Mute: yes" ? 1 : 0}
+      :selected { is_muted == "Mute: yes" ? 1 : 0}
       :transition vol-slidedir
       :same-size true
       (scale 
         :width 100
-        :value current-volume 
-        :tooltip "Volume: ${round(current-volume, 0)}%" 
-        :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%" 
+        :value current_volume 
+        :tooltip "Volume: ${round(current_volume, 0)}%" 
+        :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%; eww update current_volume=\"$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | tr -dc [:digit:])\"" 
         :orientation "h" 
         :flipped false 
         :max 101
@@ -187,7 +191,7 @@
   (eventbox
     (button
       :onclick "./scripts/movie_mode.sh toggle && eww update is_movie_mode=$(./scripts/movie_mode.sh is_movie_mode)"
-      :tooltip {is_movie_mode}
+      :tooltip {is_movie_mode ? "active" : "inactive"}
       :css {is_movie_mode ? "button {color: green;}" : "button {color: red;}"} "󰌢"
     )
   )
@@ -200,7 +204,8 @@
     :halign "center"
     (time_date)
     (battery)
-    (cputemp)
+    (cpu_usage)
+    (ram_usage)
   )
 )
 
@@ -211,30 +216,32 @@
   )
 )
 
-(defwidget cputemp []
-  ;; NOTE: Example of syntax for accessing values. EWW_TEMPS gives the entire array of possible values for debugging
-  (box 
-    :tooltip "temp"
-    "core 1 temp: ${EWW_TEMPS.CORETEMP_CORE_1}"
+(defwidget time_date []
+  (eventbox
+    :onclick {time_date_shown == 0 ? "eww update time_date_shown=1" : "eww update time_date_shown=0"}
+    (stack
+      :same-size true
+      :selected time_date_shown
+      :transition "none"
+      (label
+        :text " ${formattime(EWW_TIME,"%R")}"
+      )
+      (label
+        :text " ${formattime(EWW_TIME,"%D")}"
+      )
+    )
   )
 )
 
-(defwidget time_date []
-  " ${formattime(EWW_TIME,"%R")}"
-)
-
+;; TODO: IPC using i3
 (defvar workspace_list "[\"I\",\"II\",\"III\",\"IV\",\"V\",\"VI\",\"VII\"]")
 
 (defwidget workspaces []
-  (eventbox
-;;    :onscroll {"{}" == "up" ? "bspc desktop -f next.local" : "bspc desktop -f prev.local"}
-    (box
-      (for entry in workspace_list
-        (button 
-          :onclick "bspc desktop -f ${entry}"
-          :css {active_workspace == entry ? "button {color: red;}" : ""}
-          entry
-        )
+  (box
+    (for entry in workspace_list
+      (button 
+        :onclick "bspc desktop -f ${entry}"
+        entry
       )
     )
   )
@@ -242,10 +249,22 @@
 
 ;; TODO: 
 (defwidget weather [] "foo")
+
+(defwidget cpu_usage [] 
+  (box
+    :tooltip "Temperature: ${EWW_TEMPS.CORETEMP_CORE_1}°C"
+    "CPU: ${round(EWW_CPU["avg"],1)}%"
+  )
+)
+
 ;; TODO: 
-(defwidget cpu_usage [] "foo")
-;; TODO: 
-(defwidget ram_usage [] "foo")
+(defwidget ram_usage []
+  (box
+    :tooltip "Total RAM: ${round(EWW_RAM["total_mem"]/1000000000,2)}G"
+    "RAM: ${round(EWW_RAM["used_mem"]/1000000000,1)}G/${round(EWW_RAM["available_mem"]/1000000000,1)}G"
+  )
+)
+
 ;; TODO: 
 (defwidget network_info [] "foo")
 ;; TODO: 

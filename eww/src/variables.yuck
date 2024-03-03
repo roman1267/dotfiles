@@ -3,6 +3,8 @@
   "false"
 )
 
+;; Sys info vars
+(defvar time_date_shown 0)
 ;; utils vars
 (defvar utils_stack 0)
 (defpoll whoami
@@ -17,10 +19,15 @@
 (defvar bright-slidedir "slideup")
 
 ;; volume vars
-;; (defpoll current-volume :interval "100ms" "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | tr -dc [:digit:]")
-(defvar current-volume 50)
-;; (defpoll ismuted :interval "100ms" "pactl get-sink-mute @DEFAULT_SINK@")
-(defvar ismuted "yes")
+(defpoll current_volume
+  :interval "60m"
+  :initial "0"
+  "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | tr -dc [:digit:]"
+)
+(defpoll is_muted
+  :interval "60m"
+  "pactl get-sink-mute @DEFAULT_SINK@"
+)
 (defvar vol 0)
 (defvar vol-slidedir "slideup")
 
