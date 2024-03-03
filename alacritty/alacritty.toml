@@ -1,0 +1,8 @@
+shell = "tmux"
+import = ["~/.config/alacritty/gruvbox_material_dark.yml"]
+[env]
+term = "xterm-256color"
+
+[font]
+normal = { family = "JetBrainsMonoNerdFont", style = "Regular" }
+size = 10
