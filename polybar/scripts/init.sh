@@ -14,7 +14,7 @@ mkfifo /tmp/user-fifo/onedrive_activity.fifo 2> /dev/null
 # Starting Polybar #
 ####################
 
-polybar -r -c /home/roman/.config/polybar/gruvbox-dark-config.ini main &
+polybar -r -c /home/roman/.config/polybar/gruvbox-dark-config.ini systray &
 
 #########################
 # After polybar starts #
