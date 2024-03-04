@@ -3,6 +3,7 @@
 ;; 󰓃
 ;; 󰌢
 ;; 
+;; °
 ;; Main menu
 (defwidget main[]
   (box
@@ -252,8 +253,17 @@
 
 (defwidget cpu_usage [] 
   (box
-    :tooltip "Temperature: ${EWW_TEMPS.CORETEMP_CORE_1}°C"
-    "CPU: ${round(EWW_CPU["avg"],1)}%"
+    :tooltip "Core 1: ${EWW_CPU["cores"][0]["usage"]}%
+Core 2: ${EWW_CPU["cores"][1]["usage"]}%
+Core 3: ${EWW_CPU["cores"][3]["usage"]}%
+Temp: ${EWW_TEMPS["CORETEMP_CORE_0"]}°C"
+    (circular-progress
+      :value "${EWW_TEMPS["avg"]}"
+      :thickness 8
+    )
+    (label
+      :text "CPU: ${round(EWW_CPU["avg"],1)}%"
+    )
   )
 )
 
