@@ -52,7 +52,7 @@
       )
     )
     (eventbox
-      :onhover "if [ \"$(pactl get-sink-mute @DEFAULT_SINK@)\" == \"Mute: yes\" ]; then eww update is_muted=\"Mute: yes\"; else eww update is_muted=\"Mute: no\"; fi; eww update current_volume=\"$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | tr -dc [:digit:])\""
+      :onhover "if [ \"$(pactl get-sink-mute @DEFAULT_SINK@)\" == \"Mute: yes\" ]; then eww update is_muted=\"Mute: yes\"; else eww update is_muted=\"Mute: no\"; fi"
 
       (button
         :onclick "eww update utils_stack=6"
