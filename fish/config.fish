@@ -6,11 +6,12 @@ export menu="/usr/bin/rofi"
 
 if status is-interactive
     # abbreviations
-    abbr --add rr "ranger ."
     abbr --add se "sudoedit"
     abbr --add ls "exa -lBa"
     abbr --add lg "lazygit"
+    abbr --add scim "sc-im"
     abbr --add gc "git checkout"
+    abbr --add gp "git push"
     # ---------------- #
     # zellij options
     # set ZELLIJ_AUTO_ATTACH true
