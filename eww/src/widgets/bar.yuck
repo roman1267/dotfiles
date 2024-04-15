@@ -1,0 +1,214 @@
+(defwidget utils []
+  (eventbox
+    :onhoverlost "eww update utils_stack=0"
+    (stack
+      :selected utils_stack
+      :same-size true
+      (utils_display)
+      (power_menu)
+      (confirm_poweroff)
+      (confirm_reboot)
+      (confirm_logout)
+      (brightness)
+      (volume)
+    )
+  )
+)
+
+(defvar is_options_menu_visible false)
+
+(defwidget power_menu []
+  (box
+    (button
+      :width 40
+      :onclick "eww update utils_stack=2"
+      :css "button {font-size: 20;}"
+      ""
+    )
+    (button
+      :width 40
+      :onclick "eww update utils_stack=3"
+      :css "button {font-size: 20;}"
+      ""
+    )
+    (button
+      :width 40
+      :onclick "eww update utils_stack=4"
+      :css "button {font-size: 20;}"
+      ""
+    )
+  )
+)
+
+(defwidget confirm_poweroff []
+  (box
+    (button
+      :width 40
+      :onclick "sudo /sbin/poweroff"
+      "yes"
+    )
+    (button
+      :width 40
+      :onclick "eww update utils_stack=1"
+      "no"
+    )
+  )
+)
+
+(defwidget confirm_reboot []
+  (box
+    (button
+      :width 40
+      :onclick "sudo /sbin/reboot"
+      "yes"
+    )
+    (button
+      :width 40
+      :onclick "eww update utils_stack=1"
+      "no"
+    )
+  )
+)
+
+(defwidget confirm_logout []
+  (box
+    (button
+      :width 40
+      :onclick "pkill -u ${whoami}"
+      "yes"
+    )
+    (button
+      :width 40
+      :onclick "eww update utils_stack=1"
+      "no"
+    )
+  )
+)
+
+(defwidget volume []
+  (eventbox
+    :onrightclick { is_muted == "Mute: yes" ? "pactl set-sink-mute @DEFAULT_SINK@ 0 && eww update is_muted=\"Mute: no\"" : "pactl set-sink-mute @DEFAULT_SINK@ 1 && eww update is_muted=\"Mute: yes\""}
+    (stack
+      :selected { is_muted == "Mute: yes" ? 1 : 0}
+      :transition vol-slidedir
+      :same-size true
+      (scale 
+        :width 100
+        :value current_volume 
+        :tooltip "Volume: ${round(current_volume, 0)}%" 
+        :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%; eww update current_volume=\"$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | tr -dc [:digit:])\"" 
+        :orientation "h" 
+        :flipped false 
+        :max 101
+        :min 0
+      )
+      (label
+        :text "muted"
+      )
+    )
+  )
+)
+
+(defwidget close_button []
+  (box
+    (button
+      :css 'button {color:red;}'
+      :onclick 'eww close polybar-menu'
+      'x'
+    )
+  )
+)
+
+(defwidget movie_mode [] 
+  (eventbox
+    (button
+      :onclick "./scripts/movie_mode.sh toggle && eww update is_movie_mode=$(./scripts/movie_mode.sh is_movie_mode)"
+      :tooltip {is_movie_mode ? "active" : "inactive"}
+      :class {is_movie_mode ? "movie_mode_active" : "movie_mode_inactive"} "󰌢"
+    )
+  )
+)
+
+(defwidget sys_info []
+  (box
+    :space-evenly false
+    :spacing 20
+    :halign "center"
+    (time_date)
+    (battery)
+    (cpu_usage)
+    (ram_usage)
+  )
+)
+
+(defwidget battery []
+  (label
+    :tooltip "Status: ${EWW_BATTERY["BAT0"]["status"]}"
+    :text "󰁹 ${EWW_BATTERY["BAT0"]["capacity"]}%"
+    :css {EWW_BATTERY["BAT0"]["capacity"] < 20 ? "* {color: red;}" : ""}
+  )
+)
+
+(defwidget time_date []
+  (box
+    :tooltip "${formattime(EWW_TIME,"%A, %D")}"
+    (label
+      :text " ${formattime(EWW_TIME,"%R")}"
+    )
+  )
+)
+
+;; TODO: IPC using i3
+(defvar workspace_list "[\"1:I\",\"2:II\",\"3:III\",\"4:IV\",\"5:V\",\"6:VI\",\"7:VII\"]")
+(deflisten current_workspace
+  :initial "1:I"
+  "tail -F /tmp/tmp.asASdfe"
+)
+
+(defwidget workspaces []
+  (box
+    :spacing 5
+    (for entry in workspace_list
+      (button 
+        :onclick "i3-msg workspace ${replace(entry,":.*","")} && eww update current_workspace=\"${entry}\""
+        :class {current_workspace == "${entry}" ? "ws_button_active" : "ws_button"}
+        "${replace(entry,".*:","")}"
+      )
+    )
+  )
+)
+
+;; TODO: 
+(defwidget weather [] "foo")
+
+(defwidget cpu_usage [] 
+  (box
+    :tooltip "Core 1: ${EWW_CPU["cores"][0]["usage"]}%
+Core 2: ${EWW_CPU["cores"][1]["usage"]}%
+Core 3: ${EWW_CPU["cores"][2]["usage"]}%
+Core 4: ${EWW_CPU["cores"][3]["usage"]}%
+Temp: ${EWW_TEMPS["CORETEMP_CORE_0"]}°C"
+    (circular-progress
+      :value "${EWW_TEMPS["avg"]}"
+      :thickness 8
+    )
+    (label
+      :text "CPU: ${round(EWW_CPU["avg"],1)}%"
+    )
+  )
+)
+
+;; TODO: 
+(defwidget ram_usage []
+  (box
+    :tooltip "Total RAM: ${round(EWW_RAM["total_mem"]/1000000000,2)}G"
+    "RAM: ${round(EWW_RAM["used_mem"]/1000000000,1)}G/${round(EWW_RAM["available_mem"]/1000000000,1)}G"
+  )
+)
+
+;; TODO: 
+(defwidget network_info [] "foo")
+;; TODO: 
+(defwidget clipboard_manager [] "foo")
+
+;; NOTE: Future feature: (defwidget system_tray [] "foo")

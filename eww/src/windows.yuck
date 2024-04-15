@@ -12,21 +12,19 @@
   :windowtype "dock"
   :reserve (struts :distance "60px" :side "top")
   :wm-ignore false
-  (main)
+  (bar)
 )
 
-(defwindow barebones
+(defwindow options_menu
   :monitor 0
   :geometry (geometry
-    ;; :x "0%"
-    ;; :y "8px"
-    :width "80%"
-    ;; :height "30px"
-    ;; :anchor "top center"
+    :x "80%"
+    :y "45px"
+    :width "15%"
+    :height "300px"
   )
   :stacking "bg"
-  :windowtype "normal"
-  :reserve (struts :distance "46px" :side "top")
-  :wm-ignore false
-  "test"
+  :windowtype "dialog"
+  :wm-ignore true
+  (options_menu)
 )

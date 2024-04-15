@@ -1,6 +1,8 @@
 ;; movie_mode var
-(defvar is_movie_mode
-  "false"
+(defpoll is_movie_mode
+  :interval "60m"
+  :initial "false"
+  "./scripts/movie_mode.sh is_movie_mode"
 )
 
 ;; Sys info vars
@@ -13,9 +15,10 @@
 )
 
 ;; brightness vars
-;;(deflisten current-brightness "cat /sys/class/backlight/intel_backlight/actual_brightness")
-(defvar current-brightness 10)
-(defvar bright 0)
+(defpoll current_brightness
+  :interval "60m"
+  "echo \"$(tail -n 1 /sys/class/backlight/intel_backlight/brightness)/$(tail -n 1 /sys/class/backlight/intel_backlight/max_brightness)*100\" | bc -l")
+(defvar current_warmth 10)
 (defvar bright-slidedir "slideup")
 
 ;; volume vars
@@ -31,8 +34,4 @@
 (defvar vol 0)
 (defvar vol-slidedir "slideup")
 
-
-(defvar active_workspace
-  "I"
-  ;; "wmctrl -d | rg \"\\*\" | awk '{print $NF}'"
-)
+(defvar night_shift false)

@@ -1,0 +1,66 @@
+(defwidget utils_display[]
+  (box
+    :spacing 20
+    :orientation "h"
+    (movie_mode)
+    (button
+      :onclick "eww update utils_stack=1"
+      (label
+        :width 40
+        :text ""
+        :class "power_display"
+      )
+    )
+    (button
+      :onclick {!is_options_menu_visible ? "eww open options_menu; eww update is_options_menu_visible=true" : "eww close options_menu; eww update is_options_menu_visible=false"}
+      (label
+        :text ""
+        :class "brightness_display"
+      )
+    )
+    (box
+      (button
+        :onclick "eww update utils_stack=6"
+        (label
+          :text "󰓃"
+          :class "volume_display"
+        )
+      )
+    )
+  )
+)
+
+(defwidget brightness []
+  (box
+    (label
+      :text "b"
+    )
+    (scale 
+      :value current_brightness 
+      :tooltip "Brightness: ${round(current_brightness, 0)}%" 
+      :onchange "brightnessctl set {}%; eww update current-brightness={}"
+      :max 101
+      :min 0
+    )
+  )
+)
+
+;; WARN: Implement these two separately using serialized stored data on color temp and gamma
+(defwidget screen_temperature []
+  (box
+    :orientation "v"
+    (box
+      (button
+        :onclick {night_shift ? "redshift -x; eww update night_shift=false" : "redshift -g 0.8:0.8:0.8 -O 3000K; eww update night_shift=true" }
+        :css {night_shift ? "* {color: orange;}" : "* {color:blue;}"}
+        "Night shift"
+      )
+    )
+    (box
+      (label
+        :text "Low Gamma (don't use)"
+      )
+      (button)
+    )
+  )
+)

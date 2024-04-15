@@ -1,0 +1,105 @@
+// Gruvbox color pallete
+
+$dark0_hard: #1d2021;
+$dark0: #262626;
+$dark0_soft: #32302f;
+$dark1: #3c3836;
+$dark2: #504945;
+$dark3: #665c54;
+$dark4: #7c6f64;
+$dark4_256: #7c6f64;
+
+$gray_245: #928374;
+$gray_244: #928374;
+
+$light0_hard: #f9f5d7;
+$light0: #fbf1c7;
+$light0_soft: #f2e5bc;
+$light1: #ebdbb2;
+$light2: #d5c4a1;
+$light3: #bdae93;
+$light4: #a89984;
+$light4_256: #a89984;
+
+$bright_red: #fb4934;
+$bright_green: #b8bb26;
+$bright_yellow: #fabd2f;
+$bright_blue: #83a598;
+$bright_purple: #d3869b;
+$bright_aqua: #8ec07c;
+$bright_orange: #fe8019;
+
+$neutral_red: #cc241d;
+$neutral_green: #98971a;
+$neutral_yellow: #d79921;
+$neutral_blue: #458588;
+$neutral_purple: #b16286;
+$neutral_aqua: #689d6a;
+$neutral_orange: #d65d0e;
+
+$faded_red: #9d0006;
+$faded_green: #79740e;
+$faded_yellow: #b57614;
+$faded_blue: #076678;
+$faded_purple: #8f3f71;
+$faded_aqua: #427b58;
+$faded_orange: #af3a03;
+// General styling
+
+* {
+    font-family: JetBrainsMonoNerdFont;
+}
+
+button {
+    background-color: $dark0_hard;
+    color: #f2e5bc;
+}
+
+button:hover {
+    background-color: $faded_yellow;
+    color: $dark0_hard;
+}
+
+// Utils styling
+// -- movie mode
+
+.movie_mode_active {
+    color: #b8bb26;
+    font-size: 20;
+}
+
+.movie_mode_inactive {
+    color: #fb494d;
+    font-size: 20;
+}
+
+// -- Power Menu
+.power_display {
+    color: #79740e;
+    font-size: 20;
+}
+
+.power_display:hover {
+    color: inherit;
+    font-size: 20;
+}
+
+// -- brightness
+
+.brightness_display {
+    color: #fabd2f;
+    font-size: 20;
+}
+
+// -- volume
+.volume_display {
+    color: #af3a03;
+    font-size: 20;
+}
+
+// Sys Info styling
+// Workspace module styling
+.ws_button_active {
+    color: #262626;
+    background-color: #fe8019;
+}

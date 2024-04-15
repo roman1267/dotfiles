@@ -1,6 +1,6 @@
-;; NOTE:
-;; Use nethogs in networking module, possibly
-
+;; Include variables
 (include "./src/variables.yuck")
+;;Include Toplevel widgets
 (include "./src/widgets.yuck")
+;;Include Windows
 (include "./src/windows.yuck")
