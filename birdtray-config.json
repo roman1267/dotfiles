@@ -91,7 +91,7 @@
     ],
     "advanced/blinkingusealpha": false,
     "advanced/forcedRereadInterval": 0,
-    "advanced/ignoreNetWMhints": false,
+    "advanced/ignoreNetWMhints": true,
     "advanced/ignoreUpdateVersion": "",
     "advanced/notificationfontmaxsize": 512,
     "advanced/notificationfontminsize": 4,
