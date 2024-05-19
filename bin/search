@@ -1,0 +1,44 @@
+#!/usr/bin/bash
+
+search_dir() {
+    if ! test -z "$1"; then
+        cd "$1" &> /dev/null || return 1 #if $1 not a valid dir to search, return error
+    fi
+}
+
+open_file() {
+    if ! test -f "$1"; then
+        echo "open file reached"
+        # File does not exist
+        return 1
+    fi
+
+    # file exists, try opening it
+    if ! xdg-open "$1"; then
+        # No handlers found to open the file, or it can't be opened
+        exit 2
+    fi
+}
+
+# TODO: Eventually use regex to rewind query to last searchable dir
+fallback() {
+    # Currently, just search in the current dir if all else fails
+    echo "\"$(fzf)\"" | xargs -r xdg-open
+}
+
+# If $1 is not a searchable dir, try opening it as a file
+if ! search_dir "$@"; then
+    if ! open_file "$@"; then
+        if fallback; then
+            exit 0
+        else
+            # Unknown other errors
+            exit 1
+        fi
+    fi
+    exit 0
+else
+    echo "\"$(fzf)\"" | xargs -r xdg-open
+fi
+
+exit
