@@ -1,0 +1,492 @@
+02:28:23.746: Using EGL/X11
+02:28:23.746: CPU Name: Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz
+02:28:23.746: CPU Speed: 2899.778MHz
+02:28:23.746: Physical Cores: 2, Logical Cores: 4
+02:28:23.746: Physical Memory: 15889MB Total, 6160MB Free
+02:28:23.746: Kernel Version: Linux 6.1.90-1-MANJARO
+02:28:23.746: Distribution: "Manjaro Linux" Unknown
+02:28:23.746: Desktop Environment: bspwm
+02:28:23.746: Session Type: X11
+02:28:23.746: Window System: X11.0, Vendor: The X.Org Foundation, Version: 1.21.1
+02:28:23.747: Qt Version: 6.7.0 (runtime), 6.7.0 (compiled)
+02:28:23.747: Portable mode: false
+02:28:23.834: OBS 30.1.2-1 (linux)
+02:28:23.834: ---------------------------------
+02:28:23.834: ---------------------------------
+02:28:23.834: audio settings reset:
+02:28:23.834: 	samples per sec: 48000
+02:28:23.834: 	speakers:        2
+02:28:23.834: 	max buffering:   960 milliseconds
+02:28:23.834: 	buffering type:  dynamically increasing
+02:28:23.837: ---------------------------------
+02:28:23.837: Initializing OpenGL...
+02:28:23.899: Loading up OpenGL on adapter Intel Mesa Intel(R) HD Graphics 520 (SKL GT2)
+02:28:23.899: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 24.0.7-manjaro1.1, shading language 4.60
+02:28:24.082: ---------------------------------
+02:28:24.082: video settings reset:
+02:28:24.082: 	base resolution:   1366x768
+02:28:24.082: 	output resolution: 852x480
+02:28:24.082: 	downscale filter:  Bicubic
+02:28:24.082: 	fps:               30/1
+02:28:24.082: 	format:            NV12
+02:28:24.082: 	YUV mode:          Rec. 709/Partial
+02:28:24.082: NV12 texture support enabled
+02:28:24.082: P010 texture support not available
+02:28:24.087: Audio monitoring device:
+02:28:24.087: 	name: Default
+02:28:24.087: 	id: default
+02:28:24.087: ---------------------------------
+02:28:24.098: Failed to load 'en-US' text for module: 'decklink-captions.so'
+02:28:24.108: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+02:28:24.118: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+02:28:24.118: Failed to initialize module 'decklink.so'
+02:28:24.333: [pipewire] No captures available
+02:28:24.359: v4l2loopback not installed, virtual camera disabled
+02:28:24.420: VAAPI: Failed to initialize display in vaapi_device_h264_supported
+02:28:24.420: FFmpeg VAAPI H264 encoding not supported
+02:28:24.420: VAAPI: Failed to initialize display in vaapi_device_av1_supported
+02:28:24.420: FFmpeg VAAPI AV1 encoding not supported
+02:28:24.421: VAAPI: Failed to initialize display in vaapi_device_hevc_supported
+02:28:24.421: FFmpeg VAAPI HEVC encoding not supported
+02:28:24.550: ---------------------------------
+02:28:24.550:   Loaded Modules:
+02:28:24.550:     text-freetype2.so
+02:28:24.550:     rtmp-services.so
+02:28:24.550:     obs-x264.so
+02:28:24.550:     obs-webrtc.so
+02:28:24.551:     obs-vst.so
+02:28:24.551:     obs-transitions.so
+02:28:24.551:     obs-qsv11.so
+02:28:24.551:     obs-outputs.so
+02:28:24.551:     obs-libfdk.so
+02:28:24.551:     obs-filters.so
+02:28:24.551:     obs-ffmpeg.so
+02:28:24.551:     linux-v4l2.so
+02:28:24.551:     linux-pulseaudio.so
+02:28:24.551:     linux-pipewire.so
+02:28:24.551:     linux-jack.so
+02:28:24.551:     linux-capture.so
+02:28:24.551:     linux-alsa.so
+02:28:24.551:     image-source.so
+02:28:24.551:     frontend-tools.so
+02:28:24.551:     decklink-output-ui.so
+02:28:24.551:     decklink-captions.so
+02:28:24.551: ---------------------------------
+02:28:24.551: ==== Startup complete ===============================================
+02:28:24.603: All scene data cleared
+02:28:24.603: ------------------------------------------------
+02:28:24.609: pulse-input: Server name: 'pulseaudio 17.0'
+02:28:24.609: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+02:28:24.609: pulse-input: Started recording from 'alsa_output.pci-0000_00_1f.3.analog-stereo.monitor' (default)
+02:28:24.609: [Loaded global audio device]: 'Desktop Audio'
+02:28:24.609: pulse-input: Server name: 'pulseaudio 17.0'
+02:28:24.609: pulse-input: Audio format: s16le, 44100 Hz, 2 channels
+02:28:24.610: pulse-input: Started recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo' (default)
+02:28:24.610: [Loaded global audio device]: 'Mic/Aux'
+02:28:24.610: xshm-input: Geometry 1920x1080 @ 0,0
+02:28:24.618: Switched to scene 'Scene'
+02:28:24.618: ------------------------------------------------
+02:28:24.618: Loaded scenes:
+02:28:24.618: - scene 'Scene':
+02:28:24.618:     - source: 'Screen Capture (XSHM)' (xshm_input)
+02:28:24.618: ------------------------------------------------
+02:28:40.380: User Removed source 'Screen Capture (XSHM)' (xshm_input) from scene 'Scene'
+02:28:48.002: obs-data.c: [obs_data_create_from_json] Failed reading json string (1): '[' or '{' expected near end of file
+02:28:48.002: obs-data.c: [obs_data_create_from_json] Failed reading json string (1): '[' or '{' expected near end of file
+02:28:48.029: User added source 'Video Capture Device (PipeWire) (BETA)' (pipewire-camera-source) to scene 'Scene'
+02:28:48.086: [camera-portal] Selected resolution for ''
+02:28:48.086: [camera-portal] Selected format for ''
+02:28:48.086: [camera-portal] selected camera ''
+02:28:51.753: [camera-portal] Successfully accessed cameras
+02:28:51.785: [pipewire] Server version: 1.0.5
+02:28:51.785: [pipewire] Library version: 1.0.6
+02:28:51.785: [pipewire] Header version: 1.0.5
+02:28:51.786: [pipewire] Created registry 0x55fb3095c770
+02:28:51.786: [camera-portal] Found device v4l2_input.pci-0000_00_14.0-usb-0_2_1.0
+02:28:51.787: [camera-portal] Selected resolution for ''
+02:28:51.787: [camera-portal] Selected format for ''
+02:28:51.787: [camera-portal] selected camera ''
+02:28:54.162: [camera-portal] selected camera 'v4l2_input.pci-0000_00_14.0-usb-0_2_1.0'
+02:28:54.163: [camera-portal] streaming camera 'v4l2_input.pci-0000_00_14.0-usb-0_2_1.0'
+02:28:54.163: [pipewire] Created stream 0x55fb308d0f00
+02:28:54.163: [pipewire] Stream 0x55fb308d0f00 state: "connecting" (error: none)
+02:28:54.164: [pipewire] Playing stream 0x55fb308d0f00
+02:28:54.164: [camera-portal] Updating pixel formats
+02:28:54.164: [camera-portal] Selected format for 'v4l2_input.pci-0000_00_14.0-usb-0_2_1.0'
+02:28:54.165: [pipewire] Stream 0x55fb308d0f00 state: "paused" (error: none)
+02:28:54.188: [camera-portal] Updating device v4l2_input.pci-0000_00_14.0-usb-0_2_1.0
+02:28:54.198: [pipewire] Negotiated format:
+02:28:54.198: [pipewire]     Format: 4 (Spa:Enum:VideoFormat:YUY2)
+02:28:54.198: [pipewire]     Size: 640x480
+02:28:54.198: [pipewire]     Framerate: 30/1
+02:28:54.206: [pipewire] Stream 0x55fb308d0f00 state: "streaming" (error: none)
+02:28:54.208: [camera-portal] Selected format for 'v4l2_input.pci-0000_00_14.0-usb-0_2_1.0'
+02:28:54.221: [camera-portal] Updating device v4l2_input.pci-0000_00_14.0-usb-0_2_1.0
+02:28:54.231: [camera-portal] Selected resolution for 'v4l2_input.pci-0000_00_14.0-usb-0_2_1.0'
+02:28:54.232: [pipewire] Renegotiating stream
+02:28:54.254: [pipewire] Renegotiating stream
+02:28:54.256: [camera-portal] Updating device v4l2_input.pci-0000_00_14.0-usb-0_2_1.0
+02:28:54.323: [pipewire] Negotiated format:
+02:28:54.323: [pipewire]     Format: 4 (Spa:Enum:VideoFormat:YUY2)
+02:28:54.323: [pipewire]     Size: 160x120
+02:28:54.323: [pipewire]     Framerate: 30/1
+02:29:03.663: User Removed source 'Video Capture Device (PipeWire) (BETA)' (pipewire-camera-source) from scene 'Scene'
+02:29:03.664: [pipewire] Stream 0x55fb308d0f00 state: "paused" (error: none)
+02:29:03.666: [pipewire] Stream 0x55fb308d0f00 state: "unconnected" (error: none)
+02:29:16.045: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:16.045: 	title: Inbox - romanxmaciel@gmail.com - Mozilla Thunderbird
+02:29:16.045: 	class: Mail
+02:29:16.045: 
+02:29:16.046: xcb_composite_name_window_pixmap failed
+02:29:16.059: User added source 'Window Capture (Xcomposite)' (xcomposite_input) to scene 'Scene'
+02:29:16.155: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:16.155: 	title: Exporting — Kdenlive Manual 24.02 documentation — Mozilla Firefox
+02:29:16.155: 	class: Navigator
+02:29:16.155: 
+02:29:16.155: xcb_composite_name_window_pixmap failed
+02:29:31.822: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:31.822: 	title: Inbox - romanxmaciel@gmail.com - Mozilla Thunderbird
+02:29:31.822: 	class: Mail
+02:29:31.822: 
+02:29:31.822: xcb_composite_name_window_pixmap failed
+02:29:36.003: User Removed source 'Window Capture (Xcomposite)' (xcomposite_input) from scene 'Scene'
+02:29:39.112: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:39.112: 	title: Inbox - romanxmaciel@gmail.com - Mozilla Thunderbird
+02:29:39.112: 	class: Mail
+02:29:39.112: 
+02:29:39.112: xcb_composite_name_window_pixmap failed
+02:29:39.126: User added source 'Window Capture (Xcomposite)' (xcomposite_input) to scene 'Scene'
+02:29:39.221: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:39.221: 	title: Exporting — Kdenlive Manual 24.02 documentation — Mozilla Firefox
+02:29:39.221: 	class: Navigator
+02:29:39.221: 
+02:29:39.221: xcb_composite_name_window_pixmap failed
+02:29:41.322: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:41.322: 	title: tmux
+02:29:41.322: 	class: kitty
+02:29:41.322: 
+02:29:41.323: xcb_composite_name_window_pixmap failed
+02:29:47.855: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:47.855: 	title: tmux
+02:29:47.855: 	class: kitty
+02:29:47.855: 
+02:29:47.856: xcb_composite_name_window_pixmap failed
+02:29:48.322: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:48.322: 	title: tmux
+02:29:48.322: 	class: kitty
+02:29:48.322: 
+02:29:48.322: xcb_composite_name_window_pixmap failed
+02:29:48.655: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:48.655: 	title: tmux
+02:29:48.655: 	class: kitty
+02:29:48.655: 
+02:29:48.656: xcb_composite_name_window_pixmap failed
+02:29:48.955: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:48.955: 	title: tmux
+02:29:48.955: 	class: kitty
+02:29:48.955: 
+02:29:48.956: xcb_composite_name_window_pixmap failed
+02:29:49.322: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:49.322: 	title: tmux
+02:29:49.322: 	class: kitty
+02:29:49.322: 
+02:29:49.323: xcb_composite_name_window_pixmap failed
+02:29:49.522: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:49.522: 	title: tmux
+02:29:49.522: 	class: kitty
+02:29:49.522: 
+02:29:49.523: xcb_composite_name_window_pixmap failed
+02:29:49.721: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:49.721: 	title: tmux
+02:29:49.721: 	class: kitty
+02:29:49.721: 
+02:29:49.722: xcb_composite_name_window_pixmap failed
+02:29:49.855: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:49.855: 	title: tmux
+02:29:49.855: 	class: kitty
+02:29:49.855: 
+02:29:49.856: xcb_composite_name_window_pixmap failed
+02:29:50.089: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:50.089: 	title: tmux
+02:29:50.089: 	class: kitty
+02:29:50.089: 
+02:29:50.090: xcb_composite_name_window_pixmap failed
+02:29:50.222: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:50.222: 	title: tmux
+02:29:50.222: 	class: kitty
+02:29:50.222: 
+02:29:50.223: xcb_composite_name_window_pixmap failed
+02:29:50.422: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:50.422: 	title: tmux
+02:29:50.422: 	class: kitty
+02:29:50.422: 
+02:29:50.423: xcb_composite_name_window_pixmap failed
+02:29:50.722: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:50.722: 	title: tmux
+02:29:50.722: 	class: kitty
+02:29:50.722: 
+02:29:50.723: xcb_composite_name_window_pixmap failed
+02:29:50.855: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:50.855: 	title: tmux
+02:29:50.855: 	class: kitty
+02:29:50.855: 
+02:29:50.856: xcb_composite_name_window_pixmap failed
+02:29:50.989: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:50.989: 	title: tmux
+02:29:50.989: 	class: kitty
+02:29:50.989: 
+02:29:50.990: xcb_composite_name_window_pixmap failed
+02:29:51.289: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:51.289: 	title: tmux
+02:29:51.289: 	class: kitty
+02:29:51.289: 
+02:29:51.290: xcb_composite_name_window_pixmap failed
+02:29:51.489: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:51.489: 	title: tmux
+02:29:51.489: 	class: kitty
+02:29:51.489: 
+02:29:51.489: xcb_composite_name_window_pixmap failed
+02:29:51.655: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:51.655: 	title: tmux
+02:29:51.655: 	class: kitty
+02:29:51.655: 
+02:29:51.656: xcb_composite_name_window_pixmap failed
+02:29:51.855: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:51.855: 	title: tmux
+02:29:51.855: 	class: kitty
+02:29:51.855: 
+02:29:51.856: xcb_composite_name_window_pixmap failed
+02:29:52.022: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:52.022: 	title: tmux
+02:29:52.022: 	class: kitty
+02:29:52.022: 
+02:29:52.022: xcb_composite_name_window_pixmap failed
+02:29:52.288: [window-capture: 'Window Capture (Xcomposite)'] update settings:
+02:29:52.288: 	title: tmux
+02:29:52.288: 	class: kitty
+02:29:52.288: 
+02:29:52.289: xcb_composite_name_window_pixmap failed
+02:30:00.241: ---------------------------------
+02:30:00.241: [x264 encoder: 'simple_video_recording'] preset: veryfast
+02:30:00.242: [x264 encoder: 'simple_video_recording'] profile: high
+02:30:00.242: [x264 encoder: 'simple_video_recording'] settings:
+02:30:00.242: 	rate_control: CRF
+02:30:00.242: 	bitrate:      0
+02:30:00.242: 	buffer size:  0
+02:30:00.242: 	crf:          18
+02:30:00.242: 	fps_num:      30
+02:30:00.242: 	fps_den:      1
+02:30:00.242: 	width:        852
+02:30:00.242: 	height:       480
+02:30:00.242: 	keyint:       250
+02:30:00.242: 
+02:30:00.256: libfdk_aac encoder created
+02:30:00.256: libfdk_aac bitrate: 192, channels: 2
+02:30:00.343: ==== Recording Start ===============================================
+02:30:00.343: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/roman/2024-05-19 02-30-00.mkv'...
+02:30:05.470: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/roman/2024-05-19 02-30-00.mkv' stopped
+02:30:05.470: Output 'simple_file_output': stopping
+02:30:05.470: Output 'simple_file_output': Total frames output: 135
+02:30:05.470: Output 'simple_file_output': Total drawn frames: 154 (155 attempted)
+02:30:05.470: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 1 (0.6%)
+02:30:05.471: ==== Recording Stop ================================================
+02:30:05.497: libfdk_aac encoder destroyed
+02:30:11.885: User Removed source 'Window Capture (Xcomposite)' (xcomposite_input) from scene 'Scene'
+02:30:16.582: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:16.618: User added source 'Screen Capture (XSHM)' (xshm_input) to scene 'Scene'
+02:30:23.830: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:24.231: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:24.497: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:24.896: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:25.365: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:25.529: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:25.863: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:26.162: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:26.597: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:27.229: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:27.529: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:27.925: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:28.163: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:28.396: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:28.630: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:28.828: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:29.030: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:29.396: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:29.663: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:29.862: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:30.095: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:30.328: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:30.529: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:31.096: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:31.292: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:31.530: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:31.729: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:31.997: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:32.431: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:32.663: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:32.862: xshm-input: Geometry 1920x1080 @ 0,0
+02:30:48.316: Last log entry repeated for 13 more lines
+02:30:48.317: ---------------------------------
+02:30:48.317: [x264 encoder: 'simple_video_recording'] preset: veryfast
+02:30:48.317: [x264 encoder: 'simple_video_recording'] profile: high
+02:30:48.317: [x264 encoder: 'simple_video_recording'] settings:
+02:30:48.317: 	rate_control: CRF
+02:30:48.317: 	bitrate:      0
+02:30:48.317: 	buffer size:  0
+02:30:48.317: 	crf:          18
+02:30:48.317: 	fps_num:      30
+02:30:48.317: 	fps_den:      1
+02:30:48.317: 	width:        852
+02:30:48.317: 	height:       480
+02:30:48.317: 	keyint:       250
+02:30:48.317: 
+02:30:48.324: libfdk_aac encoder created
+02:30:48.324: libfdk_aac bitrate: 192, channels: 2
+02:30:48.330: ==== Recording Start ===============================================
+02:30:48.330: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/roman/2024-05-19 02-30-48.mkv'...
+02:31:19.000: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/roman/2024-05-19 02-30-48.mkv' stopped
+02:31:19.000: Output 'simple_file_output': stopping
+02:31:19.000: Output 'simple_file_output': Total frames output: 898
+02:31:19.000: Output 'simple_file_output': Total drawn frames: 919 (920 attempted)
+02:31:19.000: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 1 (0.1%)
+02:31:19.001: ==== Recording Stop ================================================
+02:31:19.012: libfdk_aac encoder destroyed
+02:32:38.488: Number of remaining views: 1
+02:32:38.488: ---------------------------------
+02:32:38.488: video settings reset:
+02:32:38.488: 	base resolution:   1920x1042
+02:32:38.488: 	output resolution: 1920x1042
+02:32:38.488: 	downscale filter:  Bicubic
+02:32:38.488: 	fps:               30/1
+02:32:38.488: 	format:            NV12
+02:32:38.488: 	YUV mode:          Rec. 709/Partial
+02:32:38.489: NV12 texture support enabled
+02:32:38.489: P010 texture support not available
+02:33:04.883: ---------------------------------
+02:33:04.883: [x264 encoder: 'simple_video_recording'] preset: veryfast
+02:33:04.883: [x264 encoder: 'simple_video_recording'] profile: high
+02:33:04.883: [x264 encoder: 'simple_video_recording'] settings:
+02:33:04.883: 	rate_control: CRF
+02:33:04.883: 	bitrate:      0
+02:33:04.883: 	buffer size:  0
+02:33:04.883: 	crf:          23
+02:33:04.883: 	fps_num:      30
+02:33:04.883: 	fps_den:      1
+02:33:04.883: 	width:        1920
+02:33:04.883: 	height:       1042
+02:33:04.883: 	keyint:       250
+02:33:04.883: 
+02:33:04.898: libfdk_aac encoder created
+02:33:04.898: libfdk_aac bitrate: 192, channels: 2
+02:33:04.903: ==== Recording Start ===============================================
+02:33:04.903: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/roman/2024-05-19 02-33-04.mkv'...
+02:33:41.508: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/roman/2024-05-19 02-33-04.mkv' stopped
+02:33:41.508: Output 'simple_file_output': stopping
+02:33:41.508: Output 'simple_file_output': Total frames output: 1077
+02:33:41.508: Output 'simple_file_output': Total drawn frames: 1098
+02:33:41.509: ==== Recording Stop ================================================
+02:33:41.529: libfdk_aac encoder destroyed
+02:47:19.788: ==== Shutting down ==================================================
+02:47:19.821: pulse-input: Stopped recording from 'alsa_output.pci-0000_00_1f.3.analog-stereo.monitor'
+02:47:19.821: pulse-input: Got 453387 packets with 54488560 frames
+02:47:19.821: pulse-input: Stopped recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo'
+02:47:19.822: pulse-input: Got 115666 packets with 50061032 frames
+02:47:19.858: All scene data cleared
+02:47:19.859: ------------------------------------------------
+02:47:19.948: [Scripting] Total detached callbacks: 0
+02:47:19.948: Freeing OBS context data
+02:47:19.988: == Profiler Results =============================
+02:47:19.988: run_program_init: 1066.26 ms
+02:47:19.988:  ┣OBSApp::AppInit: 25.376 ms
+02:47:19.988:  ┃ ┗OBSApp::InitLocale: 1.724 ms
+02:47:19.988:  ┗OBSApp::OBSInit: 969.285 ms
+02:47:19.988:    ┣obs_startup: 1.573 ms
+02:47:19.988:    ┗OBSBasic::OBSInit: 880.862 ms
+02:47:19.988:      ┣OBSBasic::InitBasicConfig: 0.14 ms
+02:47:19.988:      ┣OBSBasic::ResetAudio: 0.365 ms
+02:47:19.988:      ┣OBSBasic::ResetVideo: 252.618 ms
+02:47:19.988:      ┃ ┗obs_init_graphics: 247.133 ms
+02:47:19.988:      ┃   ┗shader compilation: 182.287 ms
+02:47:19.988:      ┣OBSBasic::InitOBSCallbacks: 0.006 ms
+02:47:19.988:      ┣OBSBasic::InitHotkeys: 0.037 ms
+02:47:19.988:      ┣obs_load_all_modules2: 462.895 ms
+02:47:19.988:      ┃ ┣obs_init_module(decklink-captions.so): 0 ms
+02:47:19.988:      ┃ ┣obs_init_module(decklink-output-ui.so): 0.001 ms
+02:47:19.988:      ┃ ┣obs_init_module(decklink.so): 0.208 ms
+02:47:19.988:      ┃ ┣obs_init_module(frontend-tools.so): 118.995 ms
+02:47:19.988:      ┃ ┣obs_init_module(image-source.so): 0.018 ms
+02:47:19.988:      ┃ ┣obs_init_module(linux-alsa.so): 0.005 ms
+02:47:19.988:      ┃ ┣obs_init_module(linux-capture.so): 0.915 ms
+02:47:19.988:      ┃ ┣obs_init_module(linux-jack.so): 0.009 ms
+02:47:19.988:      ┃ ┣obs_init_module(linux-pipewire.so): 21.336 ms
+02:47:19.988:      ┃ ┣obs_init_module(linux-pulseaudio.so): 0.006 ms
+02:47:19.988:      ┃ ┣obs_init_module(linux-v4l2.so): 4.423 ms
+02:47:19.988:      ┃ ┣obs_init_module(obs-ffmpeg.so): 1.406 ms
+02:47:19.988:      ┃ ┃ ┗nvenc_check: 0.717 ms
+02:47:19.988:      ┃ ┣obs_init_module(obs-filters.so): 0.042 ms
+02:47:19.988:      ┃ ┣obs_init_module(obs-libfdk.so): 0.003 ms
+02:47:19.988:      ┃ ┣obs_init_module(obs-outputs.so): 0.003 ms
+02:47:19.988:      ┃ ┣obs_init_module(obs-qsv11.so): 1.188 ms
+02:47:19.988:      ┃ ┣obs_init_module(obs-transitions.so): 0.015 ms
+02:47:19.988:      ┃ ┣obs_init_module(obs-vst.so): 0.006 ms
+02:47:19.988:      ┃ ┣obs_init_module(obs-webrtc.so): 0.005 ms
+02:47:19.988:      ┃ ┣obs_init_module(obs-x264.so): 0.003 ms
+02:47:19.988:      ┃ ┣obs_init_module(rtmp-services.so): 2.094 ms
+02:47:19.988:      ┃ ┗obs_init_module(text-freetype2.so): 0.023 ms
+02:47:19.988:      ┣OBSBasic::InitService: 2.951 ms
+02:47:19.988:      ┣OBSBasic::ResetOutputs: 0.267 ms
+02:47:19.988:      ┣OBSBasic::CreateHotkeys: 0.158 ms
+02:47:19.988:      ┣OBSBasic::InitPrimitives: 0.183 ms
+02:47:19.988:      ┗OBSBasic::Load: 66.694 ms
+02:47:19.988: obs_hotkey_thread(25 ms): min=0.086 ms, median=0.769 ms, max=96.228 ms, 99th percentile=6.203 ms, 99.9539% below 25 ms
+02:47:19.988: audio_thread(Audio): min=0.01 ms, median=0.143 ms, max=61.029 ms, 99th percentile=2.357 ms
+02:47:19.988:  ┗receive_audio: min=0.001 ms, median=1.312 ms, max=18.26 ms, 99th percentile=3.526 ms, 0.0638825 calls per parent call
+02:47:19.988:    ┣buffer_audio: min=0 ms, median=0.001 ms, max=0.088 ms, 99th percentile=0.004 ms
+02:47:19.988:    ┗do_encode: min=0.086 ms, median=1.308 ms, max=18.251 ms, 99th percentile=3.517 ms
+02:47:19.988:      ┣encode(simple_aac_recording0): min=0.088 ms, median=1.719 ms, max=10.199 ms, 99th percentile=3.833 ms, 0.494697 calls per parent call
+02:47:19.988:      ┣send_packet: min=0.001 ms, median=0.01 ms, max=15.555 ms, 99th percentile=0.068 ms
+02:47:19.988:      ┗encode(simple_aac_recording0): min=0.08 ms, median=0.557 ms, max=5.912 ms, 99th percentile=2.532 ms, 0.505303 calls per parent call
+02:47:19.988: obs_graphics_thread(33.3333 ms): min=0.057 ms, median=8.013 ms, max=79.209 ms, 99th percentile=21.831 ms, 99.2923% below 33.333 ms
+02:47:19.989:  ┣tick_sources: min=0 ms, median=4.705 ms, max=59.995 ms, 99th percentile=12.755 ms
+02:47:19.989:  ┣output_frame: min=0.029 ms, median=0.516 ms, max=77.267 ms, 99th percentile=1.544 ms
+02:47:19.989:  ┃ ┣gs_context(video->graphics): min=0.029 ms, median=0.512 ms, max=77.263 ms, 99th percentile=1.354 ms
+02:47:19.989:  ┃ ┃ ┣render_video: min=0.017 ms, median=0.246 ms, max=76.689 ms, 99th percentile=0.853 ms
+02:47:19.989:  ┃ ┃ ┃ ┣render_main_texture: min=0.014 ms, median=0.213 ms, max=9.411 ms, 99th percentile=0.793 ms
+02:47:19.989:  ┃ ┃ ┃ ┣render_output_texture: min=0.016 ms, median=0.059 ms, max=60.081 ms, 99th percentile=0.464 ms, 0.14076 calls per parent call
+02:47:19.989:  ┃ ┃ ┃ ┣render_convert_texture: min=0.022 ms, median=0.075 ms, max=14.499 ms, 99th percentile=0.226 ms, 0.14076 calls per parent call
+02:47:19.989:  ┃ ┃ ┃ ┗stage_output_texture: min=0.012 ms, median=0.04 ms, max=2.017 ms, 99th percentile=0.192 ms, 0.14076 calls per parent call
+02:47:19.989:  ┃ ┃ ┣gs_flush: min=0.005 ms, median=0.203 ms, max=3.446 ms, 99th percentile=0.528 ms
+02:47:19.989:  ┃ ┃ ┗download_frame: min=0 ms, median=0.196 ms, max=1.418 ms, 99th percentile=0.538 ms, 0.14076 calls per parent call
+02:47:19.989:  ┃ ┗output_video_data: min=0.057 ms, median=0.188 ms, max=6.402 ms, 99th percentile=1.08 ms, 0.140498 calls per parent call
+02:47:19.989:  ┗render_displays: min=0.004 ms, median=2.498 ms, max=72.632 ms, 99th percentile=7.596 ms
+02:47:19.989: video_thread(video): min=0.307 ms, median=1.249 ms, max=17.057 ms, 99th percentile=7.536 ms
+02:47:19.989:  ┗receive_video: min=0.306 ms, median=1.243 ms, max=17.053 ms, 99th percentile=7.531 ms
+02:47:19.989:    ┗do_encode: min=0.305 ms, median=1.24 ms, max=17.05 ms, 99th percentile=7.528 ms
+02:47:19.989:      ┣encode(simple_video_recording): min=0.298 ms, median=1.214 ms, max=17.048 ms, 99th percentile=7.384 ms
+02:47:19.989:      ┗send_packet: min=0.005 ms, median=0.014 ms, max=13.304 ms, 99th percentile=0.106 ms
+02:47:19.989: OBSBasic::ResetVideo: 49.066 ms
+02:47:19.989: obs_graphics_thread(33.3333 ms): min=0.061 ms, median=7.403 ms, max=86.975 ms, 99th percentile=18.105 ms, 99.9546% below 33.333 ms
+02:47:19.989:  ┣tick_sources: min=0.002 ms, median=4.717 ms, max=85.499 ms, 99th percentile=11.917 ms
+02:47:19.989:  ┣output_frame: min=0.028 ms, median=0.47 ms, max=12.732 ms, 99th percentile=1.559 ms
+02:47:19.989:  ┃ ┣gs_context(video->graphics): min=0.027 ms, median=0.455 ms, max=12.725 ms, 99th percentile=1.463 ms
+02:47:19.989:  ┃ ┃ ┣render_video: min=0.018 ms, median=0.221 ms, max=12.525 ms, 99th percentile=0.882 ms
+02:47:19.989:  ┃ ┃ ┃ ┣render_main_texture: min=0.014 ms, median=0.212 ms, max=12.517 ms, 99th percentile=0.866 ms
+02:47:19.989:  ┃ ┃ ┃ ┣render_convert_texture: min=0.024 ms, median=0.034 ms, max=1.338 ms, 99th percentile=0.143 ms, 0.0415264 calls per parent call
+02:47:19.989:  ┃ ┃ ┃ ┗stage_output_texture: min=0.01 ms, median=0.016 ms, max=2.787 ms, 99th percentile=0.06 ms, 0.0415264 calls per parent call
+02:47:19.989:  ┃ ┃ ┣gs_flush: min=0.004 ms, median=0.188 ms, max=7.577 ms, 99th percentile=0.589 ms
+02:47:19.989:  ┃ ┃ ┗download_frame: min=0 ms, median=0.069 ms, max=0.456 ms, 99th percentile=0.248 ms, 0.0415264 calls per parent call
+02:47:19.989:  ┃ ┗output_video_data: min=0.244 ms, median=0.309 ms, max=7.255 ms, 99th percentile=0.987 ms, 0.0414886 calls per parent call
+02:47:19.989:  ┗render_displays: min=0.004 ms, median=1.977 ms, max=49.618 ms, 99th percentile=6.675 ms
+02:47:19.989: OBSBasic::ResetOutputs: 0.254 ms
+02:47:19.989: video_thread(video): min=1.221 ms, median=1.812 ms, max=18.529 ms, 99th percentile=10.991 ms
+02:47:19.989:  ┗receive_video: min=1.219 ms, median=1.81 ms, max=18.526 ms, 99th percentile=10.987 ms
+02:47:19.989:    ┗do_encode: min=1.218 ms, median=1.809 ms, max=18.524 ms, 99th percentile=10.984 ms
+02:47:19.989:      ┣encode(simple_video_recording): min=1.211 ms, median=1.796 ms, max=16.836 ms, 99th percentile=10.819 ms
+02:47:19.989:      ┗send_packet: min=0.002 ms, median=0.006 ms, max=13.404 ms, 99th percentile=0.148 ms
+02:47:19.989: =================================================
+02:47:19.989: == Profiler Time Between Calls ==================
+02:47:19.989: obs_hotkey_thread(25 ms): min=25.163 ms, median=25.922 ms, max=121.351 ms, 19.7816% within ±2% of 25 ms (0% lower, 80.2184% higher)
+02:47:19.989: obs_graphics_thread(33.3333 ms): min=9.351 ms, median=33.333 ms, max=79.235 ms, 97.7454% within ±2% of 33.333 ms (1.14039% lower, 1.11417% higher)
+02:47:19.989: obs_graphics_thread(33.3333 ms): min=12.927 ms, median=33.333 ms, max=86.984 ms, 97.9312% within ±2% of 33.333 ms (1.04766% lower, 1.02118% higher)
+02:47:19.990: =================================================
+02:47:20.079: Number of memory leaks: 0
